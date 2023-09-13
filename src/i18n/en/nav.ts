@@ -15,51 +15,69 @@ export default [
 
 
 	{
-		text: 'Before you begin', header: true, type: 'learn', key: 'accountsProfile', children: [
-			{ text: 'Core concepts', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
-			{ text: 'How does Azion work?', slug: 'documentation/products/accounts/account-settings', key: 'accountsProfile/settings' },
-			{ text: 'Understand your account', slug: 'documentation/products/accounts/users-and-teams', key: 'accountsProfile/usersManagement' },
-			{ text: 'Getting help', slug: 'documentation/products/credentials', key: 'accountsProfile/credentials' },
+		text: 'Edge foundations', header: true, type: 'learn', key: 'accountsProfile', hasLabel: 'menu.begin', children: [
+			{ text: 'What edge computing is', slug: '/documentation/products/edge-foundations/what-edge-computing-is/', key: 'accountsProfile/createAccount' },
+			{ text: 'How edge computing works', slug: '/documentation/products/edge-foundations/how-edge-computing-works/', key: 'accountsProfile/settings' },
+			{ text: 'Characteristics of an edge-native platform', slug: '/documentation/products/edge-foundations/edge-native-platforms/', key: 'accountsProfile/usersManagement' },
 		]
 	},
-
 	{
-		text: 'Getting Started', header: true, type: 'learn', key: 'accountsProfile', children: [
-			{ text: 'Start from template', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
-			{ text: 'Configuring a domain', slug: 'documentation/products/accounts/account-settings', key: 'accountsProfile/settings' },
-			{ text: 'View metrics', slug: 'documentation/products/accounts/users-and-teams', key: 'accountsProfile/usersManagement' },
+		text: 'Azion foundations', header: true, type: 'learn', key: 'accountsProfile', children: [
+			{ text: 'About Azion Edge Platform', slug: '/documentation/products/azion-foundations/about-azion-edge-platform/', key: 'aboutAzionPlatform' },
+			{ text: 'How Azion Edge Platform works', slug: '/documentation/products/azion-foundations/how-azion-edge-platform-works/', key: 'howWorksAzionPlatform' },
+			{ text: 'Azion products catalog', slug: '/documentation/products/azion-foundations/azion-products-catalog/', key: 'productsAzion' },
+			{ text: 'How to start using Azion', slug: '/documentation/products/azion-foundations/how-to-start-using-azion/', key: 'startUsingAzion' },
 		]
 	},
 
-	{ text: '', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
+	{ text: 'Understand your account', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
 
-	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build/overview/', key: 'edgeApplication', hasLabel: 'menu.journey', addBorder: true },
+	{ text: 'Get help', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount'},
+
+
+	{ text: 'Start with a template', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount', hasLabel: "menu.getStarted" },
+	{ text: 'Go live with Azion', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/account-settings', key: 'accountsProfile/settings' },
+	{ text: 'View metrics', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/users-and-teams', key: 'accountsProfile/usersManagement', addBorder: true },
+
+	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build/overview/', key: 'edgeApplication', hasLabel: 'menu.journey' },
 	{ text: 'Secure', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
 	{ text: 'Deploy', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
 	{ text: 'Observe', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
-	{ text: '', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
 
 	{
-		text: 'Working with domains', header: true, type: 'learn', key: 'accountsProfile', children: [
+		text: 'Working with domains', header: true, type: 'learn', key: 'accountsProfile',hasLabel:'menu.domains', children: [
 			{ text: 'Configure a domain', header: true, anchor: true, type: 'learn', key: 'configureDomain', slug: '/documentation/products/configure-a-domain/' },
-			{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn',slug:'/documentation/products/create-digital-certificate/', key: 'certificateDomain' },
-			{ text: 'Point your domain do Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/point-your-domain/', key: 'pointDomain' },
-			{ text: 'Migrate your ns to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/migrate-ns-resolution/', key: 'migrateDomain' },
+			{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn', slug: '/documentation/products/create-a-digital-certificate/', key: 'certificateDomain' },
+			{ text: 'Point your domain do Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/point-domain-to-azion/', key: 'pointDomain' },
+			{ text: 'Migrate your ns to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/migrate-ns-to-azion/', key: 'migrateDomain' },
 		]
 	},
 
+
+
+	{ text: 'Create account', header: true, anchor: true, type: 'learn', key: 'devtools/cli', slug: '/documentation/products/cli/', hasLabel: 'menu.account' },
+
+	{ text: 'Users', header: true, anchor: true, type: 'learn', key: 'devtools/api', slug: 'a' },
+	{ text: 'Teams and permissions', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },
+	{ text: 'Activity history', header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/runtime/overview/', key: 'devtools/runtime' },
+	{ text: 'Credentials', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/sdk/go/', key: 'devtools/sdk' },
+	{ text: 'SSO', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+	{ text: 'MFA', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+	{ text: 'Billing and subscription', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+
+
+
+
 	{
-		text: 'Platform', header: true, type: 'learn', key: 'accountsProfile', children: [
-			{ text: 'Account and settings', header: true, anchor: true, type: 'learn', key: 'devtools/cli', slug: '/documentation/products/cli/' },
-			{ text: 'IAM', header: true, anchor: true, type: 'learn', key: 'devtools/api', slug: 'a' },
-			{ text: 'Limits', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },
-			{ text: 'Users and teams', header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/runtime/overview/', key: 'devtools/runtime' },
-			{ text: 'Billing', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/sdk/go/', key: 'devtools/sdk' },
-			{ text: 'Tokens', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+		text: 'Manage profile', header: true, type: 'learn', key: 'accountsProfile', addBorder: true, children: [
+			{ text: 'Personal tokens', header: true, anchor: true, type: 'learn', key: 'devtools/api', slug: 'a' },
+			{ text: 'Settings', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },
 		]
 	},
+
+
 	{
-		text: 'Developer tools', header: true, type: 'learn', key: 'accountsProfile', children: [
+		text: 'Developer tools', header: true, type: 'learn', key: 'accountsProfile', hasLabel:'menu.addResources', children: [
 			{ text: 'CLI', header: true, anchor: true, type: 'learn', key: 'devtools/cli', slug: '/documentation/products/cli/' },
 			{ text: 'API', header: true, anchor: true, type: 'learn', key: 'devtools/api', slug: 'https://api.azion.com/' },
 			{ text: 'API GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },

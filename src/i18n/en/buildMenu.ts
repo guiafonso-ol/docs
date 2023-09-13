@@ -14,27 +14,37 @@ export default [
     { text: 'Learn', header: true, onlyMobile: true, anchor: true, type: 'learn', slug: 'https://learn.azion.com/', key: 'Learn' },
 
     /// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
-    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/build/overview/', key: 'buildOverview', hasLabel: 'menu.build'},
-    { text: 'Build with Edge Applications', header: true, anchor: true, slug: '/documentation/products/build/build-with-edge-app/', key: 'buildEdgeApps'  },
+    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/build/overview/', key: 'buildOverview', hasLabel: 'menu.build' },
+    { text: 'Build with Edge Applications', header: true, anchor: true, slug: '/documentation/products/build/build-with-edge-app/', key: 'buildEdgeApps' },
 
-    { text: 'Configure main settings', header: true, anchor: true, type: 'learn', slug: 'mainSettings', key: 'mainSettings',  hasLabel: 'menu.buildEdit' },
-    { text: 'Create device groups', header: true, anchor: true, type: 'learn', slug: 'deviceGroups', key: 'deviceGroups' },
-    { text: 'Set error pages', header: true, anchor: true, type: 'learn', slug: 'errorPages', key: 'errorPages' },
-    { text: 'Work with origins', header: true, anchor: true, type: 'learn', slug: 'origins', key: 'origins' },
-    { text: 'Tune your cache settings', header: true, anchor: true, type: 'learn', slug: 'cacheSettings', key: 'cacheSettings' },
-    { text: 'Work with edge functions', header: true, anchor: true, type: 'learn', slug: 'rules', key: 'rules' },
-    { text: 'Instantiate an edge function', header: true, anchor: true, type: 'learn', slug: 'functions', key: 'functions' },
-    { text: 'Compose with templates', header: true, anchor: true, type: 'learn', slug: 'templates', key: 'templates' },
+    {
+        text: 'Edit your edge application', header: true, type: 'learn', key: 'editEdgeApp',  children: [
+            { text: 'Configure main settings', header: true, anchor: true, type: 'learn', slug: 'mainSettings', key: 'mainSettings' },
+            { text: 'Create device groups', header: true, anchor: true, type: 'learn', slug: 'deviceGroups', key: 'deviceGroups' },
+            { text: 'Set error pages', header: true, anchor: true, type: 'learn', slug: 'errorPages', key: 'errorPages' },
+            { text: 'Work with origins', header: true, anchor: true, type: 'learn', slug: 'origins', key: 'origins' },
+            { text: 'Tune your cache settings', header: true, anchor: true, type: 'learn', slug: 'cacheSettings', key: 'cacheSettings' },
+            { text: 'Work with edge functions', header: true, anchor: true, type: 'learn', slug: 'rules', key: 'rules' },
+            { text: 'Instantiate an edge function', header: true, anchor: true, type: 'learn', slug: 'functions', key: 'functions' },
+            { text: 'Compose with templates', header: true, anchor: true, type: 'learn', slug: 'templates', key: 'templates' },
+
+        ]
+    },
 
 
     { text: 'Save and Deploy', header: true, anchor: true, type: 'learn', slug: 'saveDeploy', key: 'saveDeploy' },
 
-    { text: 'Process Images', header: true, anchor: true, type: 'learn', slug: 'processImages', key: 'processImages', hasLabel: 'menu.buildAdvanced' },
-    { text: 'Multi-origin', header: true, anchor: true, type: 'learn', slug: 'multiOrigin', key: 'multiOrigin' },
-    { text: 'Live Streaming', header: true, anchor: true, type: 'learn', slug: 'liveStreaming', key: 'streaming' },
+    {
+        text: 'Advanced configuration', header: true, type: 'learn', key: 'advancedConfig',addBorder: true, children: [
+            { text: 'Process Images', header: true, anchor: true, type: 'learn', slug: 'processImages', key: 'processImages', hasLabel: 'menu.buildAdvanced' },
+            { text: 'Multi-origin', header: true, anchor: true, type: 'learn', slug: 'multiOrigin', key: 'multiOrigin' },
+            { text: 'Live Streaming', header: true, anchor: true, type: 'learn', slug: 'liveStreaming', key: 'streaming' },
+        ]
+    },
 
 
-    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/build/develop-with-azion/overview/', key: 'developOverview' , hasLabel: 'menu.buildDev' },
+
+    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/build/develop-with-azion/overview/', key: 'developOverview', hasLabel: 'menu.buildDev' },
     {
         text: 'Developer Tools', header: true, type: 'learn', key: 'devToolsBuild', children: [
             { text: 'CLI', slug: '/documentation/products/build/develop-with-azion/cli/', key: 'developCli' },
@@ -62,17 +72,17 @@ export default [
     },
 
     {
-        text: 'Language specific guides', header: true, type: 'learn', key: 'languageSpecifics', children: [
+        text: 'Language specific guides', header: true, type: 'learn', key: 'languageSpecifics',addBorder: true, children: [
             { text: 'JavaScript', slug: '/documentation/products/build/develop-with-azion/language-specific/javascript/', key: 'devJS' },
             { text: 'WebAssembly', slug: '/documentation/products/build/develop-with-azion/language-specific/wasm/', key: 'devWasm' },
         ]
     },
 
-    { text: 'Environment variables', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/develop-with-azion/environment-variables/', key: 'envVars', hasLabel: 'menu.buildData' },
+    { text: 'Environment variables', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/develop-with-azion/environment-variables/', key: 'envVars', hasLabel: 'menu.buildData', addBorder: true, },
 
 
-    { text: 'Understand Metrics', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication',  hasLabel: 'menu.buildTroubleshoot' },
-    { text: 'Debugging and Application', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
+    { text: 'Understand Metrics', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication', hasLabel: 'menu.buildTroubleshoot' },
+    { text: 'Debugging and Application', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication',addBorder: true, },
 
 
     { text: 'Tutorials', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/overview/', key: 'advConfig', addBorder: true, hasLabel: 'menu.buildTutorials' },
