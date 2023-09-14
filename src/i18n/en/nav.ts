@@ -34,10 +34,9 @@ export default [
 
 	{ text: 'Get help', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount'},
 
-
-	{ text: 'Start with a template', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount', hasLabel: "menu.getStarted" },
-	{ text: 'Go live with Azion', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/account-settings', key: 'accountsProfile/settings' },
-	{ text: 'View metrics', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/users-and-teams', key: 'accountsProfile/usersManagement', addBorder: true },
+	{ text: 'First steps', header: true, anchor: true, type: 'learn', slug: '/documentation/products/get-started/', key: 'accountsProfile/usersManagement', hasLabel: "menu.getStarted"  },
+	{ text: 'Start with a template', header: true, anchor: true, type: 'learn', slug: '/documentation/products/start-with-a-template/', key: 'getStarted/template'},
+	{ text: 'Go live with Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/go-live-with-azion/', key: 'getStarted/goLive' , addBorder: true },
 
 	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build/overview/', key: 'edgeApplication', hasLabel: 'menu.journey' },
 	{ text: 'Secure', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
