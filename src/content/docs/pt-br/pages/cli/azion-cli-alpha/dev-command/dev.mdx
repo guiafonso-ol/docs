@@ -1,0 +1,44 @@
+---
+title: Comando dev
+description: Inicialize um ambiente de desenvolvimento local através da Azion CLI.
+meta_tags: cli, next, javascript, astro, vue, react, edge computing
+namespace: documentation_cli_dev
+menu_namespace: cliMenuAlpha
+permalink: /documentacao/produtos/azion-cli/dev-comando/
+---
+
+Veja o comando que permite a inicialização de um servidor de desenvolvimento local através da Azion CLI.
+
+---
+
+## dev
+
+O comando `dev` adapta o ambiente para a build de sua edge application e executa o projeto localmente.
+
+### Uso
+
+```sh
+azion dev
+```
+
+### Saída 
+
+Depois de inicializar o servidor de desenvolvimento local, a aplicação passa pelo processo de `build`.
+
+```sh 
+Building your Edge Application. This process may take a few minutes
+Running build step command:
+...
+```
+
+Em seguida, quando a build estiver completa, o acesso à aplicação é apresentado:
+
+```sh
+[Vulcan] [Servidor] › ✔  sucesso   Função em execução na porta http://localhost:3000 
+```
+
+### Flags opcionais
+
+#### help
+
+A opção `--help` exibe mais informações sobre o comando `dev`.
