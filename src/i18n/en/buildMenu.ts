@@ -19,15 +19,13 @@ export default [
 
     {
         text: 'Edit your edge application', header: true, type: 'learn', key: 'editEdgeApp',  children: [
-            { text: 'Configure main settings', header: true, anchor: true, type: 'learn', slug: 'mainSettings', key: 'mainSettings' },
-            { text: 'Create device groups', header: true, anchor: true, type: 'learn', slug: 'deviceGroups', key: 'deviceGroups' },
+            { text: 'Configure main settings', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/build/configure-main-settings/', key: 'mainSettings' },
+            { text: 'Create device groups', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/build/create-device-groups/', key: 'deviceGroups' },
             { text: 'Set error pages', header: true, anchor: true, type: 'learn', slug: 'errorPages', key: 'errorPages' },
-            { text: 'Work with origins', header: true, anchor: true, type: 'learn', slug: 'origins', key: 'origins' },
-            { text: 'Tune your cache settings', header: true, anchor: true, type: 'learn', slug: 'cacheSettings', key: 'cacheSettings' },
+            { text: 'Work with origins', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/build/work-with-origins/', key: 'origins' },
+            { text: 'Tune your cache settings', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/build/tune-cache-settings/', key: 'cacheSettings' },
             { text: 'Work with edge functions', header: true, anchor: true, type: 'learn', slug: 'rules', key: 'rules' },
             { text: 'Instantiate an edge function', header: true, anchor: true, type: 'learn', slug: 'functions', key: 'functions' },
-            { text: 'Compose with templates', header: true, anchor: true, type: 'learn', slug: 'templates', key: 'templates' },
-
         ]
     },
 
@@ -49,7 +47,7 @@ export default [
         text: 'Developer Tools', header: true, type: 'learn', key: 'devToolsBuild', children: [
             { text: 'CLI', slug: '/documentation/products/build/develop-with-azion/cli/', key: 'developCli' },
             { text: 'Azion IDE', slug: '/documentation/products/build/develop-with-azion/code-editor/', key: 'developIDE' },
-            { text: 'Local Development', slug: 'documentation/products/edge-application/application-acceleration', key: 'developLocalDev' },
+            { text: 'Local Development', slug: '/documentation/products/build/develop-with-azion/local-dev/', key: 'developLocalDev' },
             { text: 'SDKs', slug: '/documentation/products/build/develop-with-azion/sdk/go/', key: 'developSDK' },
             { text: 'Terraform', slug: '/documentation/products/build/develop-with-azion/terraform-provider/', key: 'developTerraform' },
             { text: 'Edge Runtime', slug: '/documentation/products/build/develop-with-azion/runtime-apis/', key: 'developEdgeRuntime' },
@@ -59,6 +57,7 @@ export default [
     },
     {
         text: 'Framework specific guides', header: true, type: 'learn', key: 'frameworkSpecifics', children: [
+            { text: 'Overview', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/overview/', key: 'frameworkAngular' },
             { text: 'Angular', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/angular', key: 'frameworkAngular' },
             { text: 'Next.js', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/next', key: 'frameworkNext' },
             { text: 'Nuxt', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/nuxt', key: 'frameworkNuxt' },
@@ -81,8 +80,8 @@ export default [
     { text: 'Environment variables', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/develop-with-azion/environment-variables/', key: 'envVars', hasLabel: 'menu.buildData', addBorder: true, },
 
 
-    { text: 'Understand Metrics', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication', hasLabel: 'menu.buildTroubleshoot' },
-    { text: 'Debugging and Application', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication',addBorder: true, },
+    { text: 'Understand Metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/troubleshooting/understanding-metrics/', key: 'understandMetrics', hasLabel: 'menu.buildTroubleshoot' },
+    { text: 'Debugging and Application', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/troubleshooting/debug-applications/', key: 'debugApps',addBorder: true, },
 
 
     { text: 'Tutorials', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/overview/', key: 'advConfig', addBorder: true, hasLabel: 'menu.buildTutorials' },
