@@ -1,0 +1,241 @@
+---
+title: Work with Rules Engine
+description: Integrate rules in your application to set tasks for specific scenarios without changing your existing code. 
+meta_tags: build
+namespace: docs_guides_build_work_with_rules_engine
+permalink: /documentation/products/guides/build/work-with-rules-engine/
+menu_namespace: buildMenu
+---
+
+import Button from '~/components/Button.astro'
+
+Implementing rules in your application allow you to determine the tasks it should execute in specific scenarios without modifying your application's code. This guide demonstrates the process of creating rules with some practical examples, but most rules will be unique to each application and its needs.
+
+For a better understanding of the process, these are some of the key terms and information you need to know beforehand:
+
+Rules are composed of two major elements:
+
+1. **Criteria** are what determine what will trigger the execution of the rule. They can be customized to your needs through the use of **variables**, which will represent a specific value from your edge application or the request itself. You can then use **comparison operators** to match the variable against an **argument**, which is a value that you can determine. You can also use **logical operators** to add additional criteria and determine how they interact.
+
+2. **Behaviors** are a set of specific actions that your application can perform when the criteria are met. Some behaviors also take specific directives in the form of **arguments**.
+
+<Button href="/en/documentation/products/edge-application/rules-engine/" variant="secondary" text="Go to Rules Engine documentation"></Button>
+
+:::caution[warning]
+To unlock the full capabilities of Rules Engine, you should activate the [Application Acceleration](link_app_accel) module. If **Application Acceleration** is activated, data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+:::
+
+To create a rule, you must have:
+
+- An [Azion account](link_accounts).
+- An [edge application](link_build_with_edge_app).
+- An [Azion domain](link_config_domain).
+
+You can create rules through [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
+
+## Via RTM
+
+In this section, you'll create two rules, one in each available phase, using **Rules Engine**. Rules created in the **Request phase** will be executed as soon as an end-user makes a request to your edge application while a rule in the **Response phase** will be executed before the response is delivered to the end-user. 
+
+First, activate the **Application Acceleration** module:
+
+1. [Access RTM](link_rtm).
+2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and select **Edge Application**.
+3. Click the edge application you want to configure. 
+4. Activate the **Application Acceleration** module.
+5. Click the **Save** button.
+
+Starting with the request phase, these next steps will help you create a rule that rewrites a request. This way, you can create a rule to deliver content to an end-user from a specific URI without requiring that the exact path from the origin to be present in the request.
+
+Consider the scenario: when an end-user makes a request to your application for `xxxxxxxxxx.map.azionedge.net/page`, the content that should be delivered instead is from the path `/content/page.html`. To create a rule that will rewrite this request, still on the **Edge Application** page:
+
+1. Navigate to the **Rules Engine** tab.
+2. Click the **Add Rule** button.
+3. On the dropdown menu, select **Request Phase**.
+4. Give your rule a name and, if necessary, a description.
+5. In the **Criteria** section, select the `${uri}` variable.
+6. As a comparison operator, select **is equal to**.
+7. As an argument, add the value `/page`.
+8. In the **Behaviors** section, select **Rewrite Request**.
+9. As an argument, add `${uri}content/page.html`
+10. Click the **Save** button.
+
+Now, when a request is made to `xxxxxxxxxx.map.azionedge.net/page`, end-users should see the contents from the `/content/page.html` page without having to specify the entire address in their browser.
+
+As for the response page, you can create a rule that, for example, removes an HTTP header from the response using the **Filter Response Header** behavior.
+
+The `Server` header stores information about the server that generated the response. By removing this header, end-users won't receive information about the infrastructure of your application, enhancing your security by reducing the information available to potential attackers.
+
+:::note
+Exercise caution when removing any headers from your edge application and ensure that this action doesn't interfere in any applicable standards and guidelines.
+:::
+
+To filter the `Server` header from the response, on the **Edge Application** page:
+
+1. Navigate to the **Rules Engine** tab.
+2. Click the **Add Rule** button.
+3. On the dropdown menu, select **Response Phase**.
+4. Give your rule a name and, if necessary, a description.
+5. In the **Criteria** section, select the `${uri}` variable.
+6. As a comparison operator, select **starts with**.
+7. As an argument, add the value `/`.
+8. In the Behaviors section, select **Filter Response Header**.
+9. As an argument, add `Server`.
+10. Click the **Save** button.
+
+Now, when a request is made to your application, the `Server` header will be removed from the response.
+
+## Via API
+
+This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
+
+Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account. You also need to [retrieve your edge application ID](link_configure_edge_app) to run the following requests.
+
+With your token and edge application ID in hand, follow the steps to create rules via API:
+
+1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Application Acceleration](link_app_accel) module:
+
+```bash
+curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edge_application_id>' \
+--header 'Accept: application/json; version=3' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Token [TOKEN VALUE]' \
+--data '{
+    "application_acceleration": true
+}'
+```
+
+2. You'll receive a response with the updated value.
+3. Run the following `POST` request to create a rule in the **Request Phase**, replacing the edge application ID value with the value you received in the previous response:
+
+```bash
+curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/rules_engine/request/rules' \
+--header 'Accept: application/json; version=3' \
+--header 'Authorization: Token [TOKEN VALUE]' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "RewriteReq /page",
+    "behaviors": [
+        {
+            "name": "rewrite_request",
+            "target": "${uri}content/page.html"
+        }
+    ],
+    "criteria": [
+        [
+            {
+                "variable": "${uri}",
+                "operator": "is_equal",
+                "conditional": "if",
+                "input_value": "/page"
+            }
+        ]
+    ]
+}'
+```
+
+  | Key | Description |
+  | --- | --- |
+  | `name` | Name of the rule to be created. |
+  | `behaviors` | Contains a list of objects with properties that identify behaviors. These objects are composed of `name`, which indicates the name of the behavior, and `target`, which contains the argument for the behavior, if required. |
+  | `criteria` | Contains a list of objects with properties that identify criteria.  |
+  | `variable` | Sets the variable for the criteria. |
+  | `operator` | Determines the comparison being made between the variable and its argument. |
+  | `conditional` | Defines how this criteria behaves in relation to others. The first criteria should always carry an `if` value. Subsequent criteria may carry `and` or `or` values. |
+  | `input_value` | The value inputted as the argument. May contain another variable, a regex expression, a path or URL depending on the variable being compared. |
+
+4. You'll receive a response similar to this:
+
+```json
+{
+    "results": {
+        "id": <rule_id>,
+        "name": "RewriteReq /page",
+        "phase": "request",
+        "behaviors": [
+            {
+            "name": "rewrite_request",
+            "target": "${uri}content/page.html"
+            }
+        ],
+        "criteria": [
+            [
+                {
+                    "variable": "${uri}",
+                    "operator": "is_equal",
+                    "conditional": "if",
+                    "input_value": "/page"
+                }
+            ]
+        ],
+        "is_active": true,
+        "order": 1,
+        "description": null
+    }
+}
+```
+
+5. Run the following `POST` request to create a rule in the **Response Phase**, replacing the edge application ID value:
+
+```bash
+curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/rules_engine/response/rules' \
+--header 'Accept: application/json; version=3' \
+--header 'Authorization: Token [TOKEN VALUE]' \
+--header 'Content-Type: application/json' \
+--data '{
+    "name": "FilterRespHeader Server",
+    "behaviors": [
+        {
+            "name": "filter_response_header",
+            "target": "Server"
+        }
+    ],
+    "criteria": [
+        [
+            {
+                "variable": "${uri}",
+                "operator": "is_equal",
+                "conditional": "if",
+                "input_value": "/"
+            }
+        ]
+    ]
+}'
+```
+
+6. You'll receive the following response:
+
+```json
+{
+    "results": {
+        "id": <rule_id>,
+        "name": "FilterRespHeader Server",
+        "phase": "response",
+        "behaviors": [
+            {
+                "name": "filter_response_header",
+                "target": "Server"
+            }
+        ],
+        "criteria": [
+            [
+                {
+                    "variable": "${uri}",
+                    "operator": "is_equal",
+                    "conditional": "if",
+                    "input_value": "/"
+                }
+            ]
+        ],
+        "is_active": true,
+        "order": 1,
+        "description": null
+    }
+}
+```
+
+7. Wait a few minutes for the changes to propagate.
+
+:::tip
+Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+:::
