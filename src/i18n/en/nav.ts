@@ -30,27 +30,26 @@ export default [
 		]
 	},
 
-	{ text: 'Understand your account', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
+	{ text: 'Understand your account WIP', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
 
-	{ text: 'Get help', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount'},
+	{ text: 'Get help WIP', header: true, anchor: true, type: 'learn', slug: 'documentation/products/accounts/creating-account', key: 'accountsProfile/createAccount' },
 
-	{ text: 'First steps', header: true, anchor: true, type: 'learn', slug: '/documentation/products/get-started/', key: 'accountsProfile/usersManagement', hasLabel: "menu.getStarted"  },
-	{ text: 'Start with a template', header: true, anchor: true, type: 'learn', slug: '/documentation/products/start-with-a-template/', key: 'getStarted/template'},
-	{ text: 'Go live with Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/go-live-with-azion/', key: 'getStarted/goLive' , addBorder: true },
+	{ text: 'Welcome to the edge', header: true, anchor: true, type: 'learn', slug: '/documentation/products/get-started/', key: 'accountsProfile/usersManagement', hasLabel: "menu.getStarted" },
+	{ text: 'Start with a template', header: true, anchor: true, type: 'learn', slug: '/documentation/products/start-with-a-template/', key: 'getStarted/template' },
+	{ text: 'Go live with Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/go-live-with-azion/', key: 'getStarted/goLive' },
+	{ text: 'View metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/use-real-time-metrics/', key: 'getStarted/viewMetrics', addBorder: true },
+
 
 	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build/overview/', key: 'edgeApplication', hasLabel: 'menu.journey' },
-	{ text: 'Secure', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
-	{ text: 'Deploy', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
-	{ text: 'Observe', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
+	{ text: 'Secure WIP', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
+	{ text: 'Deploy WIP', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
+	{ text: 'Observe WIP', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build', key: 'edgeApplication' },
 
-	{
-		text: 'Working with domains', header: true, type: 'learn', key: 'accountsProfile',hasLabel:'menu.domains', children: [
-			{ text: 'Configure a domain', header: true, anchor: true, type: 'learn', key: 'configureDomain', slug: '/documentation/products/configure-a-domain/' },
-			{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn', slug: '/documentation/products/create-a-digital-certificate/', key: 'certificateDomain' },
-			{ text: 'Point your domain do Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/point-domain-to-azion/', key: 'pointDomain' },
-			{ text: 'Migrate your ns to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/migrate-ns-to-azion/', key: 'migrateDomain' },
-		]
-	},
+	{ text: 'Configure a domain', header: true, anchor: true, type: 'learn', key: 'configureDomain', slug: '/documentation/products/configure-a-domain/', hasLabel: 'menu.domains' },
+	{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn', slug: '/documentation/products/create-a-digital-certificate/', key: 'certificateDomain' },
+	{ text: 'Point your domain to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/point-domain-to-azion/', key: 'pointDomain' },
+	{ text: 'Migrate NS to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/migrate-ns-to-azion/', key: 'migrateDomain' },
+
 
 
 
@@ -76,47 +75,61 @@ export default [
 
 
 	{
-		text: 'Developer tools', header: true, type: 'learn', key: 'accountsProfile', hasLabel:'menu.addResources', children: [
+		text: 'Developer tools', header: true, type: 'learn', key: 'accountsProfile', hasLabel: 'menu.addResources', addBorder: true, children: [
 			{ text: 'CLI', header: true, anchor: true, type: 'learn', key: 'devtools/cli', slug: '/documentation/products/cli/' },
 			{ text: 'API', header: true, anchor: true, type: 'learn', key: 'devtools/api', slug: 'https://api.azion.com/' },
-			{ text: 'API GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },
+			{ text: 'API GraphQL Playground', header: true, anchor: true, type: 'learn', slug: '/documentation/products/graphql-api/', key: 'devtools/graphQL' },
 			{ text: 'Edge Runtime', header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/runtime/overview/', key: 'devtools/runtime' },
 			{ text: 'SDK', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/sdk/go/', key: 'devtools/sdk' },
 			{ text: 'Terraform', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
-			{ text: 'Building integrations', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
-			{ text: 'Platform Kit', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+			{ text: 'Building integrations WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
+			{ text: 'Platform Kit WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
 			{ text: 'Terraform', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
 			{ text: 'GitHub', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
 
 		]
 	},
 
+	{ text: 'Migrate to Azion wip', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'glossary' },
+
 	{
-		text: 'Reference', header: true, type: 'learn', key: 'accountsProfile', children: [
-			{
-				text: 'Build', header: true, type: 'learn', key: 'accountsProfile', children: [
+		text: 'Templates and integrations wip', header: true, type: 'learn', key: 'accountsProfile', hasLabel: 'menu.addResources', addBorder: true, children: [
+
+		]
+	},
+
+	{ text: 'Glossary', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'glossary', hasLabel:'menu.reference' },
+	{ text: 'Limits WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'limits' },
+
+	{
+		text: 'Build', header: true, type: 'learn', key: 'accountsProfile', children: [
 
 
-				]
-			},
-			{
-				text: 'Secure', header: true, type: 'learn', key: 'accountsProfile', children: [
+		]
+	},
+	{
+		text: 'Secure', header: true, type: 'learn', key: 'accountsProfile', children: [
 
 
-				]
-			},
-			{
-				text: 'Deploy', header: true, type: 'learn', key: 'accountsProfile', children: [
+		]
+	},
+	{
+		text: 'Deploy', header: true, type: 'learn', key: 'accountsProfile', children: [
 
 
-				]
-			},
-			{
-				text: 'Observe', header: true, type: 'learn', key: 'accountsProfile', children: [
+		]
+	},
+	{
+		text: 'Observe', header: true, type: 'learn', key: 'accountsProfile', children: [
 
 
-				]
-			},
+		]
+	},
+	{ text: 'Marketplace', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'mktplc' },
+
+	{
+		text: 'Professional services', header: true, type: 'learn', key: 'accountsProfile', children: [
+
 
 		]
 	},
