@@ -1,24 +1,30 @@
 ---
-title: Build with Azion
-description: Learn how to deploy a static application on the Azion platform with Azion CLI.
-meta_tags: cli
-namespace: documentation_how_to_cli_static_application
+title: Overview
+description: Build applications closer to end-users, ensuring low-latency processing at the edge.
+meta_tags: build, edge application, edge network, edge computing
+namespace: docs_guides_build_overview
 menu_namespace: buildMenu
 og_image: ''
-permalink: /documentation/products/build/overview/
+permalink: /documentation/products/guides/build/overview/
 ---
 
-Welcome to **Edge Application**, an Azion product designed to boost the performance of your applications through edge computing. Azion assists developers in building and delivering applications closer to your end-users, providing lower latency processing at the edge.
+import Button from '~/components/Button.astro'
+
+Welcome to Azion Build products - your gateway to harnessing the power of edge computing for your web applications. 
+
+**Edge Application** is an Azion product tailored to elevate your applications through the power of edge computing. With it, you can build applications nearer to end-users, offering low-latency processing at the edge.
 
 Through reverse-proxy architecture, Edge Application processes user requests at the edge of the network. By directing requests to origin servers and utilizing edge caching capabilities, following requests can access data cached at the network edge, decentralizing storage and optimizing data transfer rates and efficiency. You can also transfer the processing of origin responses to the edge. This scalability allows you to adapt to growing traffic demands without over-loading your infrastructure and reducing maintenance costs.
 
-> To know more about edge computing, visit [Core concepts](link_core_concepts).
+<Button href="link_edge_foundations" variant="secondary" text="Go to Edge Foundations"></Button>
 
 Azion provides a range of tools to configure your application at the edge: 
 
-- [Real-Time Manager](link_manager): provides a user-friendly interface to configure your application and monitor data.
+- [Real-Time Manager (RTM)](link_manager): provides a user-friendly interface to configure your application and monitor data.
 - [Azion CLI](link_cli_doc): enables the team to interact with Azion's system directly from the command line interface.
 - [Azion API](link_api_doc): allows you to integrate and automate application deployment, scaling, and monitoring processes.
 - [Terraform](link_terraform_doc): integrate your infrastructure with Azion using Terraform.
 
-When you build an edge application, you can determine where your content will be retrieved from and configure the domain that will be used to deliver your application to your end-users. Start by [building an edge application](link_build_with).
+When you build an edge application, you can determine where your content will be retrieved from and configure the domain that will be used to deliver your application to your end-users.
+
+Go to the next page to build your edge application from scratch.
