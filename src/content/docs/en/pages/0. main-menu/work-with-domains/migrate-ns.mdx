@@ -1,12 +1,18 @@
 ---
-title: Migrate NS to Azion
-description: insert later
-meta_tags: domains
+title: Migrate nameservers to Azion
+description: Migrate your authoritative nameservers to Azion for improved control and reliability of your DNS settings at the edge.
+meta_tags: domains, nameserver, DNS, resolution, ANAME, zones
 namespace: docs_guides_migrate_nameserver
-permalink: /documentation/products/migrate-ns-to-azion/
+permalink: /documentation/products/guides/migrate-ns-to-azion/
 ---
 
-Azion allows you to host and manage DNS zones and records by redirecting the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through **Intelligent DNS**. When using Intelligent DNS, all configurations needed are made through Azion [Real-Time Manager (RTM)](http://manager.azion.com) or the [Azion API](link_api).
+Azion allows you to host and manage DNS zones and records by redirecting the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through **Intelligent DNS**.
+
+<Button href="link_int_dns" variant="secondary" text="Go to Intelligent DNS documentation"></Button>
+
+:::caution[warning]
+If **Intelligent DNS** is activated, hosted zones and queries could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+:::
 
 ## Create a DNS zone
 
@@ -96,13 +102,13 @@ curl --location 'https://api.azionapi.net/intelligent_dns' \
 
 ## Redirect authoritative nameservers
 
-The next step is to redirect your domain’s authoritative DNS servers, you'll need to access your domain provider and modify your NS records. Here are some of the most popular domain providers and how they handle DNS nameserver changes:
+The next step is to redirect your domain's authoritative DNS servers, and for this, you'll need to access your domain provider and modify your NS records. Here are some of the most popular domain providers and how they handle DNS nameserver changes:
 
 - [AWS Route53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-name-servers-glue-records.html)
 - [GoDaddy](https://www.godaddy.com/help/edit-my-domain-nameservers-664)
 - [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9434/10/using-default-nameservers-vs-hosting-nameservers/)
 
-We recommend that you add all of the three available Azion nameservers for extra reliability: 
+Azion recommends that you add all of the three available Azion nameservers for additional reliability: 
 
 - `ns1.aziondns.net`
 - `ns2.aziondns.com`
@@ -262,3 +268,7 @@ curl --location 'https://api.azionapi.net/intelligent_dns/<hosted_zone_id>/recor
 ```
 
 8. Wait a couple of minutes for the changes to propagate. You can [run the DIG command](/en/documentation/products/guides/run-the-dig-command/) in your terminal to check whether your domain points to the Azion address.
+
+:::tip
+Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+:::
