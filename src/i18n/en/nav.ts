@@ -45,10 +45,10 @@ export default [
 	{ text: 'Deploy', header: true, anchor: true, type: 'learn', slug: 'documentation/products/deploy', key: 'deploy' },
 	{ text: 'Observe', header: true, anchor: true, type: 'learn', slug: 'documentation/products/observe', key: 'observe' },
 
-	{ text: 'Configure a domain', header: true, anchor: true, type: 'learn', key: 'configureDomain', slug: '/documentation/products/configure-a-domain/', hasLabel: 'menu.domains' },
-	{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn', slug: '/documentation/products/create-a-digital-certificate/', key: 'certificateDomain' },
-	{ text: 'Point your domain to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/point-domain-to-azion/', key: 'pointDomain' },
-	{ text: 'Migrate NS to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/migrate-ns-to-azion/', key: 'migrateDomain' },
+	{ text: 'Configure a domain', header: true, anchor: true, type: 'learn', key: 'configureDomain', slug: '/documentation/products/guides/configure-a-domain/', hasLabel: 'menu.domains' },
+	{ text: 'Create digital certificate', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-a-digital-certificate//', key: 'certificateDomain' },
+	{ text: 'Point your domain to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/point-domain-to-azion/', key: 'pointDomain' },
+	{ text: 'Migrate NS to Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/migrate-ns-to-azion/', key: 'migrateDomain' },
 
 
 
