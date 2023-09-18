@@ -81,7 +81,7 @@ export default [
     { text: 'Environment variables', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/develop-with-azion/environment-variables/', key: 'envVars', hasLabel: 'menu.buildData', addBorder: true, },
 
 
-    { text: 'Understand metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/troubleshooting/understanding-metrics/', key: 'understandMetrics', hasLabel: 'menu.buildTroubleshoot' },
+    { text: 'Understand metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/use-real-time-metrics/', key: 'understandMetrics', hasLabel: 'menu.buildTroubleshoot' },
     { text: 'Debug applications', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/troubleshooting/debug-applications/', key: 'debugApps',addBorder: true, },
 
 

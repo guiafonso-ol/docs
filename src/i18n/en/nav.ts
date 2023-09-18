@@ -26,7 +26,7 @@ export default [
 			{ text: 'About Azion Edge Platform', slug: '/documentation/products/azion-foundations/about-azion-edge-platform/', key: 'aboutAzionPlatform' },
 			{ text: 'How Azion Edge Platform works', slug: '/documentation/products/azion-foundations/how-azion-edge-platform-works/', key: 'howWorksAzionPlatform' },
 			{ text: 'Azion products catalog', slug: '/documentation/products/azion-foundations/azion-products-catalog/', key: 'productsAzion' },
-			{ text: 'How to start using Azion', slug: '/documentation/products/azion-foundations/how-to-start-using-azion/', key: 'startUsingAzion' },
+			{ text: 'Explore Azion', slug: '/documentation/products/azion-foundations/explore-azion/', key: 'startUsingAzion' },
 		]
 	},
 
@@ -40,7 +40,7 @@ export default [
 	{ text: 'View metrics', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/use-real-time-metrics/', key: 'getStarted/viewMetrics', addBorder: true },
 
 
-	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: 'documentation/products/build/overview/', key: 'build', hasLabel: 'menu.journey' },
+	{ text: 'Build', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/build/overview/', key: 'build', hasLabel: 'menu.journey' },
 	{ text: 'Secure', header: true, anchor: true, type: 'learn', slug: 'documentation/products/secure', key: 'secure' },
 	{ text: 'Deploy', header: true, anchor: true, type: 'learn', slug: 'documentation/products/deploy', key: 'deploy' },
 	{ text: 'Observe', header: true, anchor: true, type: 'learn', slug: 'documentation/products/observe', key: 'observe' },
