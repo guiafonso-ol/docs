@@ -14,8 +14,8 @@ export default [
     { text: 'Learn', header: true, onlyMobile: true, anchor: true, type: 'learn', slug: 'https://learn.azion.com/', key: 'Learn' },
 
     /// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
-    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/build/overview/', key: 'buildOverview', hasLabel: 'menu.build' },
-    { text: 'Build with Edge Application', header: true, anchor: true, slug: '/documentation/products/build/build-with-edge-app/', key: 'buildEdgeApps' },
+    { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/guides/build/overview/', key: 'buildOverview', hasLabel: 'menu.build' },
+    { text: 'Build with Edge Application', header: true, anchor: true, slug: '/documentation/products/guides/build/build-with-edge-application/', key: 'buildEdgeApps' },
 
     {
         text: 'Edit your edge application', header: true, type: 'learn', key: 'editEdgeApp',  children: [
@@ -33,7 +33,7 @@ export default [
     { text: 'Save and deploy WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'saveDeploy' },
 
     {
-        text: 'Advanced configurations', header: true, type: 'learn', key: 'advancedConfig',addBorder: true, children: [
+        text: 'Advanced configurations WIP', header: true, type: 'learn', key: 'advancedConfig',addBorder: true, children: [
             { text: 'Process images', header: true, anchor: true, type: 'learn', slug: 'processImages', key: 'processImages', hasLabel: 'menu.buildAdvanced' },
             { text: 'Multi-origin', header: true, anchor: true, type: 'learn', slug: 'multiOrigin', key: 'multiOrigin' },
             { text: 'Live Streaming', header: true, anchor: true, type: 'learn', slug: 'liveStreaming', key: 'streaming' },
