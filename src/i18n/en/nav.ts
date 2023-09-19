@@ -125,8 +125,6 @@ export default [
 			{ text: 'Origins', header: true, anchor: true, type: 'learn', key: 'reference/origins', slug: '/documentation/products/edge-application/origins/' },
 			{ text: 'Real-Time Purge', header: true, anchor: true, type: 'learn', key: 'reference/realTimePurge', slug: '/documentation/products/edge-application/real-time-purge/' },
 			{ text: 'Rules Engine', header: true, anchor: true, type: 'learn', key: 'reference/rulesEngineedgeApplication', slug: '/documentation/products/edge-application/rules-engine/' },
-			{ text: 'WebSocket Proxy', header: true, anchor: true, type: 'learn', key: 'reference/webSocket', slug: '/documentation/products/edge-application/websocket/' },
-
 		]
 	},
 	{
