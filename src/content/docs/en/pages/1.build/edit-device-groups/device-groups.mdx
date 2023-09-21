@@ -11,13 +11,13 @@ import Button from '~/components/Button.astro'
 
 You can use **Device Groups** to group end-users based on their devices, operating systems, or browsers with information provided by the `User-Agent` HTTP request header. By using device groups to categorize requests, you can make your application more responsive.
 
-<Button href="link_dev_group" text="Go to Device Groups documentation" variant="secondary"></Button>
+<Button href="/en/documentation/products/edge-application/device-groups/" text="Go to Device Groups documentation" variant="secondary"></Button>
 
 To create a device group for your edge application, you must have:
 
-- An Azion [account and credentials](link_account).
-- An [edge application](link_create).
-- An [Azion domain](link_config_domain).
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+- An [edge application](/en/documentation/products/guides/build/overview/).
+- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
 
 You can create device groups using [Real-Time Manager](#via-rtm) or the [Azion API](#via-api).
 
@@ -25,7 +25,7 @@ You can create device groups using [Real-Time Manager](#via-rtm) or the [Azion A
 
 The purpose of this guide is that you create and match a new device group for mobile devices that access your application. To add a new device group through RTM:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the edge application to which you want to create a new device group.
 4. Select the **Device Groups** tab.
@@ -65,7 +65,7 @@ Now that you've verified that the devices are being correctly categorized, you c
 
 This section contains a sequence of cURL commands you can run in a command terminal or in an API platform of your choosing.
 
-Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account. You also need to [retrieve your edge application ID](link_configure_edge_app) to run the following requests.
+Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
 
 With your token and edge application ID in hand, follow the steps to create a new origin via API:
 
@@ -183,5 +183,5 @@ device-is: Mobile device
 You may now deactivate the rule or create a different rule to fit the application's settings to your needs.
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::

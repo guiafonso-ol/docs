@@ -9,15 +9,15 @@ menu_namespace: buildMenu
 
 import Button from '~/components/Button.astro'
 
-Once you create an edge application with Azion, you have a range of configurations you can modify. This guide will pick up where you left off when you [created an edge application](link_build_with_edge_app) or [used a template](link_templates). In this guide, you'll learn to modify the protocols, delivery ports, and the encryption type that your application uses to interface with your end-users.
+Once you create an edge application with Azion, you have a range of configurations you can modify. This guide will pick up where you left off when you [created an edge application](/en/documentation/products/guides/build/build-with-edge-application/) or [used a template](/en/documentation/products/start-with-a-template/). In this guide, you'll learn to modify the protocols, delivery ports, and the encryption type that your application uses to interface with your end-users.
 
-<Button href="link_edge_app" variant="secondary" text="Go to Edge Application documentation"></Button>
+<Button href="/en/documentation/products/edge-application/" variant="secondary" text="Go to Edge Application documentation"></Button>
 
 To modify your application's delivery main settings, you must have:
 
-- An Azion [account and credentials](link_account).
-- An [edge application](link_create).
-- An [Azion domain](link_config_domain).
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+- An [edge application](/en/documentation/products/guides/build/overview/).
+- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
 
 You can choose to configure your application using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
 
@@ -25,7 +25,7 @@ You can choose to configure your application using [Real-Time Manager (RTM)](#vi
 
 In this section, you'll modify some configurations of your application. You can see if the changes ocurred by accessing your Azion address.
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and select **Edge Application**.
 3. Click the edge application you want to configure. From this screen, you can alter the application's name, delivery settings, and which modules it uses.
 
@@ -50,7 +50,7 @@ curl -I https://xxxxxxxxxx.map.azionedge.net/
 If you receive a `2xx` or `3xx` response, it means your application is running on HTTPS protocol.
 
 :::note
-HTTPS applications require a digital certificate. Your Azion domain is automatically protected by the Azion SAN certificate, but if you wish to [customize your domain](link_configure_domain), you'll need a [custom certificate](link_custom_certificate) as well.
+HTTPS applications require a digital certificate. Your Azion domain is automatically protected by the Azion SAN certificate, but if you wish to [customize your domain](/en/documentation/products/guides/configure-a-domain/), you'll need a [custom certificate](/en/documentation/products/guides/create-a-digital-certificate/) as well.
 :::
 
 ### Delivery ports
@@ -91,7 +91,7 @@ Modules can unlock additional functionalities and features for your applications
 
 For now, you'll enable two modules. The modules **Application Acceleration** and **Edge Functions** will be used for when you [tune your cache settings](link_cache_settings), [instantiate an edge function](link_functions), and [work with Rules Engine](link_rules). If you're an [Account owner](link_account_types), start by enabling them for your account:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the top-right corner, click the **Account menu**.
 3. Select **Billing & Subscriptions**.
 4. Navigate to the **Subscriptions** tab.
@@ -104,7 +104,7 @@ You may also take this chance to update your payment method on the **Payment Met
 
 To enable the modules for your application:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the edge application you want to configure.
 4. Enable the modules **Application Acceleration** and **Edge Functions**.
@@ -114,7 +114,7 @@ To enable the modules for your application:
 
 This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
 
-Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account.
+Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account.
 
 With your token in hand, follow the steps to create an Azion domain via API:
 
@@ -156,7 +156,7 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edg
   | `application_acceleration` | When `true`, enables the **Application Acceleration** module. |
 
 :::note
-To check all available values for this endpoint, see the [Azion API](link_api) documentation.
+To check all available values for this endpoint, see the [Azion API](https://api.azion.com) documentation.
 :::
 
 4. You'll receive a response similar to this:
@@ -205,5 +205,5 @@ curl -I https://xxxxxxxxxx.map.azionedge.net:8443
 7. Check the supported cipher suite by inspecting the page or [running the DIG command](link_dig_command).
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about what the Azion API can offer.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about what the Azion API can offer.
 :::
