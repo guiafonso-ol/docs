@@ -11,20 +11,12 @@ import Button from '~/components/Button.astro'
 
 You can use **Device Groups** to group end-users based on their devices, operating systems, or browsers with information provided by the `User-Agent` HTTP request header. By using device groups to categorize requests, you can make your application more responsive.
 
-The example described in this guide will group browsers through the contents of its `User-Agent` request header. For example:
-
-```
-User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 16_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.4 Mobile/15E148 Safari/604.1
-```
-
-A request that carries this header was made from a mobile device, more specifically iPhone, using a Safari browser. By creating a device group that matches the words `Mobile` and `iPhone` from the header, you can configure your application to respond differently to any request that falls within this category.
-
 <Button href="link_dev_group" text="Go to Device Groups documentation" variant="secondary"></Button>
 
-To create a device group for your edge application, you'll need:
+To create a device group for your edge application, you must have:
 
-- An [Azion account](link_accounts)
-- An [edge application](link_build_with_edge_app).
+- An Azion [account and credentials](link_account).
+- An [edge application](link_create).
 - An [Azion domain](link_config_domain).
 
 You can create device groups using [Real-Time Manager](#via-rtm) or the [Azion API](#via-api).

@@ -9,9 +9,7 @@ menu_namespace: buildMenu
 
 import Button from '~/components/Button.astro'
 
-Through the **Image Processor** module, you can adjust image sizes, add filters and watermarks, or convert formats to suit for more efficient content delivery, bandwidth saving, and reduce object storage costs. These changes can be applied directly in the URL of your image by appending the queries described in the [Image Processor](/en/documentation/products/edge-application/image-processor/) page to the image's URL, which you may do using an [edge function](/en/documentation/products/edge-application/edge-function/).
-
-In addition, **Image Processor** detects the browser's compatibility with WEBP format and, when possible, it'll convert the image format automatically. BMP images will also be automatically converted to JPEG or WEBP, depending on the browser's compatibility.
+Through the **Image Processor** module, you can adjust image sizes, add filters and watermarks, or convert formats to suit for more efficient content delivery, bandwidth saving, and reduce object storage costs. These changes can be applied directly in the URL of your image by appending `ims` queries to the image's URL.
 
 <Button href="/en/documentation/products/edge-application/image-processor/" variant="secondary" text="Go to Image Processor documentation"></Button>
 
@@ -21,8 +19,8 @@ If you wish to optimize your images, the [Image Processor](link_img_process) mod
 
 To activate this module and start processing your images, you must have:
 
-- An [Azion account](link_accounts).
-- An [edge application](link_build_with_edge_app).
+- An Azion [account and credentials](link_account).
+- An [edge application](link_create).
 - An [Azion domain](link_config_domain).
 
 You can optimize your images through the [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
