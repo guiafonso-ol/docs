@@ -13,7 +13,6 @@ export default [
 	{ text: 'Dev Tools', header: true, onlyMobile: true, anchor: true, type: 'learn', slug: '/documentation/products/dev-tools/', key: 'devTools' },
 	{ text: 'Learn', header: true, onlyMobile: true, anchor: true, type: 'learn', slug: 'https://learn.azion.com/', key: 'Learn' },
 
-
 	{
 		text: 'Edge foundations', header: true, type: 'learn', key: 'edgeFoundations', hasLabel: 'menu.begin', children: [
 			{ text: 'What edge computing is', slug: '/documentation/products/edge-foundations/what-edge-computing-is/', key: 'EdgeComputingIs' },
