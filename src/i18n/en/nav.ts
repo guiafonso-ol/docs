@@ -22,7 +22,7 @@ export default [
 		]
 	},
 	{
-		text: 'Azion foundations', header: true, type: 'learn', key: 'azionFoundations',  children: [
+		text: 'Azion foundations', header: true, type: 'learn', key: 'azionFoundations', children: [
 			{ text: 'About Azion Edge Platform', slug: '/documentation/products/azion-foundations/about-azion-edge-platform/', key: 'aboutAzionPlatform' },
 			{ text: 'How Azion Edge Platform works', slug: '/documentation/products/azion-foundations/how-azion-edge-platform-works/', key: 'howWorksAzionPlatform' },
 			{ text: 'Azion products catalog', slug: '/documentation/products/azion-foundations/azion-products-catalog/', key: 'productsAzion' },
@@ -66,7 +66,7 @@ export default [
 			{ text: 'Billing and subscription', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/billing-and-subscriptions/', key: 'account/billingAndSubscriptions' },
 		]
 	},
-	
+
 
 
 
@@ -105,11 +105,9 @@ export default [
 		]
 	},
 
-	{ text: 'Glossary', header: true, anchor: true, type: 'learn', slug: '/documentation/products/azion-glossary/', key: 'glossary', hasLabel:'menu.reference' },
-	{ text: 'Limits WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'limits' },
 
 	{
-		text: 'Build', header: true, type: 'learn', key: 'accountsProfile', children: [
+		text: 'Build', header: true, type: 'learn', key: 'accountsProfile', hasLabel: 'menu.reference', children: [
 			{ text: 'Edge Application', header: true, anchor: true, type: 'learn', key: 'reference/edgeApplication', slug: '/documentation/products/edge-application/' },
 			{ text: 'Application Acceleration', header: true, anchor: true, type: 'learn', key: 'reference/applicationAcceleration', slug: '/documentation/products/edge-application/application-acceleration/' },
 			{ text: 'Edge Caching', header: true, anchor: true, type: 'learn', key: 'reference/edgeCaching', slug: '/documentation/products/edge-application/edge-caching/' },
@@ -164,17 +162,26 @@ export default [
 
 		]
 	},
-	{ 
+	{
 		text: 'Marketplace', header: true, type: 'learn', key: 'mktp', children: [
 			{ text: 'Marketplace', header: true, anchor: true, type: 'learn', key: 'mktp', slug: '/documentation/products/marketplace/' },
 			{ text: 'Marketplace Independent Software Vendor', header: true, anchor: true, type: 'learn', key: 'mktp/isv', slug: '/documentation/products/marketplace/isv-signup/' },
 			{ text: 'Marketplace Seller Guide', header: true, anchor: true, type: 'learn', key: 'mktp/sellerGuide', slug: '/documentation/products/marketplace/marketplace-seller-guide/' },
-	]
-},
+		]
+	},
 
 	{
-		text: 'Professional services WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'professionalServices', addBorder: true
+		text: 'Professional services WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'professionalServices'
 	},
+
+	{
+		text: 'Limits WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'limits'
+	},
+
+	{
+		text: 'Glossary', header: true, anchor: true, type: 'learn', slug: '/documentation/products/azion-glossary/', key: 'glossary', addBorder: true
+	},
+
 
 	{
 		text: 'System Status', header: true, anchor: true, type: 'learn', slug: 'https://status.azion.com/', key: 'systemStatus'
