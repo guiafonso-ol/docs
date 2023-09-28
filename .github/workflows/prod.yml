@@ -27,11 +27,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.6.1
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@aziontech'
-          always-auth: true
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_SECRET }}
 
       - name: INSTALLING DEPENDENCIES
         run: npm install
@@ -53,9 +48,9 @@ jobs:
         with:
           secrets: ${{ secrets.GCP_EXP_ENG }}
           bucket: azdocs
-
+          
       - name: PURGE Documentation
-        run: npm install axios && node purge.js basic_token=${{ secrets.MKT_BASIC_TOKEN }}
-
+        run: npm install axios && node cicd/cdn-purge.js basic_token=${{ secrets.MKT_BASIC_TOKEN }}
+  
       - name: UPDATE Algolia data
-        run: npm install algoliasearch stream-json && node algolia-index.js app=${{ secrets.ALGOLIA_CONF_APP }} api=${{ secrets.ALGOLIA_CONF_API }}
+        run: npm install algoliasearch stream-json && node cicd/algolia-reindex.js app=${{ secrets.ALGOLIA_CONF_APP }} api=${{ secrets.ALGOLIA_CONF_API }}
