@@ -16,7 +16,7 @@ export default [
 
 	{
 		text: 'Edge foundations', header: true, type: 'learn', key: 'edgeFoundations', hasLabel: 'menu.begin', children: [
-			{ text: 'What edge computing is', slug: '/documentation/products/edge-foundations/what-edge-computing-is/', key: 'EdgeComputingIs' },
+			{ text: 'What is edge computing', slug: '/documentation/products/edge-foundations/what-is-edge-computing/', key: 'EdgeComputingIs' },
 			{ text: 'How edge computing works', slug: '/documentation/products/edge-foundations/how-edge-computing-works/', key: 'edgeComputingWorks' },
 			{ text: 'Characteristics of an edge-native platform', slug: '/documentation/products/edge-foundations/edge-native-platforms/', key: 'edgeNativePlatform' },
 		]
