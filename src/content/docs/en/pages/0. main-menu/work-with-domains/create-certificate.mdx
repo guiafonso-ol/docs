@@ -9,23 +9,17 @@ import Button from '~/components/Button.astro'
 
 If your application runs on HTTPS, you'll need a **digital certificate**. A TLS digital certificate confirms a website's identity and protects data transfers. It secures financial transactions and any exchange of sensitive information, from login credentials to personal data.
 
-When you [create a domain](link_configure_domain), you can submit your Azion domain as a SAN entry under Azion's certificate. This means that the Azion domain associated with your HTTPS edge application will be secure. However, **Azion SAN** only protects `azionedge.net` domains.
+<Button href="/en/documentation/products/edge-application/digital-certificates/" variant="secondary" text="Go to Digital Certificates documentation"></Button>
 
-If you [point your domain](link_point_domain) or [migrate your NS resolution](link_migrate_ns) to Azion, your custom domain won't be protected by Azion's certificate and you will need a custom certificate or a Let's Encrypt certificate. 
-
-At Azion, you can upload your own TLS certificate acquired from a Certificate Authority (CA). When submitting a request for a certificate to a CA, you can include multiple custom domains that the certificate must encrypt. You can assign this certificate across Azion domains and edge applications. This means you can use the same certificate for many domains, as long as the host or CNAMEs listed in the domains were also included in the signed certificate.
-
-Azion supports digital certificates that use the X.509 standard. This certificate holds owner identification, a public key, and is either signed by a CA or self-signed. Another type of certificate supported by Azion is **Trusted CA**. These are digital certificates signed by a CA and supported by the CA's root certificate under a *chain of trust* model.
-
-You can also request that a **Let's Encrypt certificate** be generated for your domain through Azion. The process for requesting a Let's Encrypt certificate is different from the previous types of certificates. See [how to generate a Let's Encrypt certificate](link_guide_lets) for more information.
-
-<Button href="link_dig_cert" variant="secondary" text="Go to Digital Certificates documentation"></Button>
+:::note
+You can also request that a **Let's Encrypt certificate** be generated for your domain through Azion. The process for requesting a Let's Encrypt certificate is different from custom certificates. See [how to generate a Let's Encrypt certificate](/en/documentation/products/guides/how-to-generate-a-lets-encrypt-certificate/) for more information.
+:::
 
 To register your custom certificate with Azion, you'll need:
 
-- An Azion [account and credentials](link_account).
-- An [edge application](link_create).
-- A [custom domain](link_configure#custom-domain).
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+- An [edge application](/en/documentation/products/guides/build/overview/).
+- A [custom domain](/en/documentation/products/guides/configure-a-domain/#link-a-custom-domain-to-your-application).
 
 You can choose to add a certificate using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
 
@@ -61,7 +55,7 @@ openssl s_client -showcerts -connect yourdomain.com:443
 
 You can submit your custom certificate to Azion with a sequence of Client URL (cURL) commands you can run in your terminal, or in an API platform of your choosing.
 
-Before you run the Azion API, you need to [generate a personal token](link_personal_token) for your account.
+Before you run the Azion API, you need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account.
 
 To create a custom certificate via API:
 
@@ -162,7 +156,7 @@ curl --location 'https://api.azionapi.net/domains' \
 4. Run a `PATCH` request, adding the `domain_id` as a path, to update the `digital_certificate_id` field with the id you received in the creation process:
 
 :::note[Optional]
-As shown in the example below, if you didn't update the CNAME field with your custom domain yet, make sure to add the host and any common names for the application that are protected by the certificate. This will be useful when you later [point your domain](link_point_domain) or [migrate your NS resolution](link_migrate_ns) to Azion.
+As shown in the example below, if you didn't update the CNAME field with your custom domain yet, make sure to add the host and any common names for the application that are protected by the certificate. This will be useful when you later [point your domain](/en/documentation/products/guides/point-domain-to-azion/) or [migrate your NS resolution](/en/documentation/products/guides/migrate-ns-to-azion/) to Azion.
 :::
 
 ```bash
@@ -186,5 +180,5 @@ openssl s_client -showcerts -connect yourdomain.com:443
 ``` 
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::

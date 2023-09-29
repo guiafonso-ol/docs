@@ -12,19 +12,23 @@ import Button from '~/components/Button.astro'
 
 Azion **Edge Application** allows you to configure numerous settings, from behaviors at the request-response layer to how the edge stores your cache. You may look into the reference documentation for each functionality for more information, but for now, start by creating an edge application that will serve as a blank canvas.
 
-<Button href="link_edge_app" variant="secondary" text="Go to Edge Application documentation"></Button>
+<Button href="/en/documentation/products/edge-application/" variant="secondary" text="Go to Edge Application documentation"></Button>
 
 :::tip
-Have an application and want to move to the edge? [Migrate to Azion](link_migrate). Already work with a certain framework or have an infrastructure in mind? [Check the available Templates](link_templates).
+Have an application and want to move to the edge? [Migrate to Azion](/en/documentation/products/guides/migrate-ns-to-azion/). Already work with a certain framework or have an infrastructure in mind? [Check the available Templates](/en/documentation/products/start-with-a-template/).
 :::
 
-To create an edge application, you'll need an [Azion account](link_accounts). You can choose to configure your application using [Real-Time Manager (RTM)](#via-rtm), the [Azion CLI](#via-cli) or the [Azion API](#via-api).
+To create an edge application,  you must have:
+
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+
+You can choose to configure your application using [Real-Time Manager (RTM)](#via-rtm), the [Azion CLI](#via-cli), or the [Azion API](#via-api).
 
 ## Via RTM
 
 To create a new edge application:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the **Add Edge Application** button.
 4. Give your application a name.
@@ -33,14 +37,14 @@ The following sections will walk you through each configuration option in the ap
 
 ### Main settings
 
-This section defines how your application will be delivered. Customize these options later by following the instructions in [Configuring your main settings](link_config_app).
+This section defines how your application will be delivered. Customize these options later by following the instructions in [Configuring your main settings](/en/documentation/products/guides/build/configure-main-settings/).
 
 1. In **Delivery Protocol**, select **HTTP**.
 2. In **Ports HTTP**, keep the option **80 (Default)** selected.
 
 ### Origin
 
-Here you'll define where your content will be retrieved from. For the purposes of this guide, the [httpbin.org website](https://httpbin.org) will be the source of content for the application. This setting can be customized later in [Working with origins](link_work_origins).
+Here you'll define where your content will be retrieved from. For the purposes of this guide, the [httpbin.org website](https://httpbin.org) will be the source of content for the application. This setting can be customized later in [Working with origins](/en/documentation/products/guides/build/work-with-origins/).
 
 1. In **Origin Type**, select **Single Origin**.
 2. In **Address**, add `httpbin.org`.
@@ -49,7 +53,7 @@ Here you'll define where your content will be retrieved from. For the purposes o
 
 ### Cache settings
 
-This is the section where you define how your application handles cache, be it caching at the edge or at the user's browser. In [Tuning your Cache Settings](link_cache_settings), you'll be able to further customize these and other settings.
+This is the section where you define how your application handles cache, be it caching at the edge or at the user's browser. In [Tuning your Cache Settings](/en/documentation/products/guides/build/tune-cache-settings/), you'll be able to further customize these and other settings.
 
 1. In **Browser Cache Settings**, keep the option **Honor Origin Cache Headers** selected.
 2. In **CDN Cache Settings**, keep the option **Honor Origin Cache Settings** selected.
@@ -73,18 +77,18 @@ To create a domain:
 
 Wait a few minutes for your new domain to propagate to the edge nodes and access your `xxxxxxxxxx.map.azionedge.net` address. You should now see your edge application online.
 
-<Button href="link_work_with_domains" variant="secondary" text="Go to Work with Domains"></Button>
+<Button href="/en/documentation/products/guides/configure-a-domain/" variant="secondary" text="Configure a domain"></Button>
 
 ## Via CLI
 
-You can also create your application via the command line interface (CLI). Visit the [CLI documentation](link_cli) to install the **Azion CLI** on your computer.
+You can also create your application via the command line interface (CLI). Visit the [CLI documentation](/en/documentation/products/build/develop-with-azion/cli/) to install the **Azion CLI** on your computer.
 
 ## Via API
 
 Azion provides you an extensive API specification and documentation of its platform and features. This guide provides you with a sequence of Client URL (cURL) commands you can run in your machine's terminal, or in an API platform of your choosing, and execute tasks to have your edge application up and running.
 
 
-Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account.
+Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account.
 
 With your token in hand, follow the steps to create a new edge application and domain:
 
@@ -182,5 +186,5 @@ curl --location 'https://api.azionapi.net/domains' \
 6. Since the `domain_name` received in the response carries your application's Azion domain as a string, you need to wait a few minutes for the changes to propagate. Then, paste the value within double quotes (`"`) in your browser to access your application.
 
 :::tip
-Want to integrate with the Azion API using another framework? [Start developing with Azion](link_developing). Also, check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+Want to integrate with the Azion API using another framework? [Start developing with Azion](/en/documentation/products/build/develop-with-azion/overview/). Also, check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::

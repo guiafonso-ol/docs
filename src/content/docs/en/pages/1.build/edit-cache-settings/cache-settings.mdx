@@ -11,17 +11,17 @@ import Button from '~/components/Button.astro'
 
 Adjust your edge application's cache strategy, including expiration values at the edge or browser level, file slicing to break large files into smaller chunks, and cache key segmentation based on query strings or cookies.
 
-<Button href="link_cache_sett" variant="secondary" text="Go to Cache Settings documentation"></Button>
+<Button href="/en/documentation/products/edge-application/cache-settings/" variant="secondary" text="Go to Cache Settings documentation"></Button>
 
 :::caution[warning]
-Some cache features require the [Application Acceleration](link_app_accel) module to be active. If **Application Acceleration** is activated, data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+Some cache features require the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module to be active. If **Application Acceleration** is activated, data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 
 To modify your application's cache settings, you need:
 
-- An [Azion account](link_accounts).
-- An [edge application](link_build_with_edge_app).
-- An [Azion domain](link_config_domain).
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+- An [edge application](/en/documentation/products/guides/build/overview/).
+- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
 
 You can configure your application's cache settings using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
 
@@ -31,7 +31,7 @@ In this section, you'll add a new configuration for your application's cache. Yo
 
 To create a new cache setting instance:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and select **Edge Application**.
 3. Click the edge application you want to configure. 
 4. Activate the **Application Acceleration** module to unlock advanced cache key configurations.
@@ -68,7 +68,7 @@ If your application isn't sending `Cache-Control` and `Expires` headers or the v
 4. Add the TTL in seconds in the **Maximum TTL (seconds)** field.
 
 :::note
-The maximum and default TTL values for the edge should be between `60` and `31536000` seconds (3 years). If you have the [Application Acceleration](link_app_accel) module activated, you can set this value to a minimum of `0`. Additionally, if you have the [L2 Caching](link_l2) module activated and wish to maintain cache in the L2, you must set TTL to at least `3` seconds.
+The maximum and default TTL values for the edge should be between `60` and `31536000` seconds (3 years). If you have the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module activated, you can set this value to a minimum of `0`. Additionally, if you have the [L2 Caching](/en/documentation/products/edge-application/l2-caching/) module activated and wish to maintain cache in the L2, you must set TTL to at least `3` seconds.
 
 A TTL zero isn't the same as a cache bypass. For more details, read about the difference between these settings on the [Bypass cache](/en/documentation/products/edge-application/rules-engine/#difference-between-bypass-cache-and-ttl-0) documentation.
 :::
@@ -84,10 +84,10 @@ The slice range is of `1024KB` by default.
 
 ### Advanced cache key
 
-The next step is to customize how your content will be cached at the edge through [cache keys](link_ref_cache). You can choose to segment cache keys based on query string or cookies.
+The next step is to customize how your content will be cached at the edge through [cache keys](/en/documentation/products/edge-application/cache-settings/#advanced-cache-key). You can choose to segment cache keys based on query string or cookies.
 
 :::note
-To enable all advanced cache key functionalities, you must activate the [Application Acceleration](link_app_accel) module.
+To enable all advanced cache key functionalities, you must activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module.
 :::
 
 To determine content variation in cache:
@@ -123,7 +123,7 @@ Use the **Content varies by Cookies, with the exception of a few (Blacklist)** o
 
 ### Adaptive delivery
 
-Finally, if you've created a [device group](link_dev_guide), you can segment cache keys based on the device groups you created. To do so:
+Finally, if you've created a [device group](/en/documentation/products/guides/build/create-device-groups/), you can segment cache keys based on the device groups you created. To do so:
 
 14. Select **Content varies by some Device Groups (Whitelist)**.
 15. Click the **+** button to add a device group.
@@ -143,7 +143,7 @@ The instructions below will help you create a rule in which any request from you
 3. Under the **Criteria** section, select the variable `${uri}`.
 
 :::note
-The `${uri}` variable may already be selected by default if you didn't activate **Application Acceleration**. For more information on Edge Application modules, see [some link idk](link_modules).
+The `${uri}` variable may already be selected by default if you didn't activate **Application Acceleration**. For more information on Edge Application modules, see the [Edge Application documentation](/en/documentation/products/edge-application/).
 :::
 
 4. As a comparison operator, select **is equal**.
@@ -159,11 +159,11 @@ To verify how your content is being cached, follow the guide [How to verify appl
 
 This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
 
-Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account. You also need to [retrieve your edge application ID](link_configure_edge_app) to run the following requests.
+Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
 
 With your token and edge application ID in hand, follow the steps to create a new cache setting via API:
 
-1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Application Acceleration](link_app_accel) module:
+1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module:
 
 ```bash
 curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edge_application_id>' \
@@ -176,7 +176,7 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edg
 ```
 
 2. You'll receive a response with the updated value.
-3. If you want to configure adaptive delivery for one of your [device groups](link_device_group), run the following `GET` request beforehand:
+3. If you want to configure adaptive delivery for one of your [device groups](/en/documentation/products/guides/build/create-device-groups/), run the following `GET` request beforehand:
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/device_groups' \
@@ -229,13 +229,13 @@ curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id
   | `browser_cache_settings_maximum_ttl` | Determines the TTL for browser cache in seconds. |
   | `cdn_cache_settings` | Sets the string in value as the policy selected for the edge in relation to the TTL values sent in the `Cache-Control` or `Expires` headers. When `"honor"`, cache TTL directives received from the origin are implemented. When `"override"`, allows you to determine the edge cache TTL through `cdn_cache_settings_maximum_ttl`. |
   | `cdn_cache_settings_maximum_ttl` | Determines the TTL for edge cache in seconds. If no headers are received from the origin, implements a default TTL value. |
-  | `cache_by_query_string` | Defines whether cache should be segmented into cache keys based on query strings. For all available options, see the [API documentation](link_api). |
+  | `cache_by_query_string` | Defines whether cache should be segmented into cache keys based on query strings. For all available options, see the [API documentation](https://api.azion.com). |
   | `query_string_fields` | Sets the strings listed as the keys of queries that should be maintained as the same cache key or segmented into separate cache keys. |
-  | `adaptive_delivery_action` | Defines whether cache should be segmented into cache keys based on [device groups](link_dev_grp). |
+  | `adaptive_delivery_action` | Defines whether cache should be segmented into cache keys based on [device groups](/en/documentation/products/guides/build/create-device-groups/). |
   | `device_group` | Sets the IDs listed as the device groups that should be maintained as the same cache key or segmented into separate cache keys. |
   | `enable_query_string_sort` | If `true`, a single cache key is generated for URLs with the same query strings regardless of the order in which they are grouped. |
   | `enable_caching_for_options` | If `true`, `OPTIONS` requests can be cached. |
-  | `cache_by_cookies` | Defines whether cache should be segmented into cache keys based on cookies. For all available options, see the [API documentation](link_api). |
+  | `cache_by_cookies` | Defines whether cache should be segmented into cache keys based on cookies. For all available options, see the [API documentation](https://api.azion.com). |
   | `cookie_names` | Sets the strings listed as the names of cookies that should be maintained as the same cache key or segmented into separate cache keys. |
   | `enable_caching_for_post` | If `true`, `POST` requests can be cached. |
   | `l2_caching_enabled` | If `true`, enables caching in the L2. You must have the [L2 Caching](l2_caching) module active to enable this setting. |
@@ -311,7 +311,7 @@ curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id
 ```
 
 :::note
-For more information on the rules endpoint, see [Work with Rules Engine](link_work_rules).
+For more information on the rules endpoint, see [Work with Rules Engine](/en/documentation/products/guides/build/work-with-rules-engine/).
 :::
 
 8. You'll receive a response with the updated data.
@@ -320,5 +320,5 @@ For more information on the rules endpoint, see [Work with Rules Engine](link_wo
 To verify how your content is being cached, follow the guide [How to verify application cache indicators using Modheader for Google Chrome](/en/documentation/products/guides/check-page-cache-time/).
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::

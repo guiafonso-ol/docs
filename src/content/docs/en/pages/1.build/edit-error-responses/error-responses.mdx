@@ -11,14 +11,14 @@ import Button from '~/components/Button.astro'
 
 With **Error Responses**, you can configure your edge application to handle error status from the origin by determining a custom path, delivering another code in the response, and determining a cache TTL for error pages.
 
-<Button href="link_err_resp" text="Go to Error Responses documentation" variant="secondary"></Button>
+<Button href="/en/documentation/products/edge-application/error-responses/" text="Go to Error Responses documentation" variant="secondary"></Button>
 
 To modify your application's error responses, you must have:
 
-- An [Azion account](link_accounts).
-- An [edge application](link_build_with_edge_app).
-- An [Azion domain](link_config_domain).
-- A [configured origin](link_work_orig).
+- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
+- An [edge application](/en/documentation/products/guides/build/overview/).
+- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
+- A [configured origin](/en/documentation/products/guides/build/work-with-origins/).
 
 ## Configuring your error responses via RTM
 
@@ -26,7 +26,7 @@ In this section, you'll modify your **Default Error Response** by determining a 
 
 To customize error responses:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and select **Edge Application**.
 3. Click the edge application you want to configure.
 4. Select the **Error Responses** tab.
@@ -51,5 +51,5 @@ You can also determine a specific path from your origin that will be delivered t
 When errors are received from the origin, your edge application will cache and display the error page based on the new configuration.
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know more about all features available via API.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::
