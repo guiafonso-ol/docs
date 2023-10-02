@@ -8,17 +8,38 @@ permalink: /documentation/products/go-live-with-azion/
 
 import Button from '~/components/Button.astro';
 
-Once you’ve built an edge application, you can ensure that it’s accessible to your users while taking advantage of Azion highly distribuited network to attends to your traffic and deliver your content.
+Once you’ve [built an edge application](/en/documentation/products/guides/build/overview/), you can ensure that it’s accessible to your users while taking advantage of Azion highly distribuited network to attends to your traffic and deliver your content.
 
-By pointing your traffic to Azion, the [Edge Network](https://www.azion.com/en/products/edge-network/) will serve every content request from your edge application. It selects the nearest, healthiest edge node to handle the request, deliver the content, and process the business rules.
+Going live with Azion involves a few configurations to [add a custom domain](#adding-a-custom-domain), [migrate your ns](#migrating-your-ns-to-azion), and [point your traffic to Azion](#pointing-your-domain-to-azion) to the edge network.
 
-Going live with Azion involves a few configurations to [add a custom domain](#adding-a-custom-domain), [migrate your ns](#migrating-your-ns-to-azion), and [point your traffic to Azion](#pointing-your-domain-to-azion) to the edge network. This documentation will guide you to complete these tasks and benefit from edge computing capabilities.
+---
 
 ## Adding a custom domain
 
-**Domains** is a standard feature that provides a domain generation service. This process is very important as you must have a domain configured to connect your edge application to other Azion's products. You can also associate a custom domain to allow your users visit your edge application through a domain you own.
+If you build a new edge application following the [Get Started process](/en/documentation/products/get-started/), Azion automatically generates a subdomain to make it accessible, with this format: `xxxxxxxxxx.map.azionedge.net/`. 
 
-If you build a new edge application following the [Get Started process](/en/documentation/products/get-started/), Azion automatically generates a subdomain to make it accessible, with this format: `xxxxxxxxxx.map.azionedge.net/`. This domain identifies your edge application on Azion and can't be modified. However, you can associate your own custom domain and subdomains to your Azion domain to handle user access to your edge application.
+This domain identifies your edge application on Azion and can't be modified. However, you can associate your own custom domain and subdomains to your Azion domain to handle user access to your edge application.
+
+### Accessing the Domains' configuration page
+
+[Access Real-Time Manager (RTM)](https://manager.azion.com/) and click on **Manage your Domains** card on the homepage.
+
+- As an alternate path, select **Products menu**, represented by three horizontal lines on the upper-left corner, and then **Domains**.
+
+This will open the Domains page to perform your changes.
+
+### Setting up a new custom domain
+
+To do so, click the **Add Domain** button and fill in the presented fields to set up your custom domain:
+
+- **Add Configuration Name**: type a name for your domain. You can use the same name as your domain name.
+- [Digital Certificate](/en/documentation/products/edge-application/digital-certificates/): you can select the standard Azion Certificate (SAN), a [Let's Encrypt Certificate](/en/documentation/products/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party Digital Certificate](/en/documentation/products/guides/create-a-digital-certificate/).
+- [Canonical Names (CNAMES)](/en/documentation/products/edge-application/domains/#cname): write all the CNAMES your domain has. CNAMES must be added one per line, no punctuation.
+- **CNAME Access Only** switch: it should be activated if you want your users to access your edge application only by CNAME.
+- **Edge Application**: select the one your **Domain** will be connected to from the dropdown list.
+- The **Active** switch: it must be on.
+
+Finally, click the **Save** button. Now, your custom domain is now connected to the edge application. 
 
 :::note
 Your root domain (example: `myapp.com`) and all your subdomains (example: `user.myapp.com`) must each be configured as a standalone domain.
@@ -26,35 +47,10 @@ Your root domain (example: `myapp.com`) and all your subdomains (example: `user.
 To read about others ways to customize and configure your own domains or subdomains, visit the [Domains documentation](/en/documentation/products/guides/configure-a-domain/)
 :::
 
-To access the **Domains** configuration page:
-
-1. Access [Real-Time Manager (RTM)](https://manager.azion.com/).
-2. On the homepage, click on **Manage your Domains** card. Or, on the upper-left corner, select **Products menu**, represented by three horizontal lines, > **Domains**, as an alternate path.
-
-To set up a new custom **Domain**, follow the steps below:
-
-1. Click the **Add Domain** button.
-2. In **Add Configuration Name**, choose a name for your domain.
-  - You can use the same name as your domain name.
-3. Select the [Digital Certificate](/en/documentation/products/edge-application/digital-certificates/) you'll use.
-  - It can be the standard Azion Certificate (SAN), a [Let's Encrypt Certificate](/en/documentation/products/guides/how-to-generate-a-lets-encrypt-certificate/), or any [third-party Digital Certificate](/en/documentation/products/guides/create-a-digital-certificate/).
-4. Write all [Canonical Names (CNAMES)](/en/documentation/products/edge-application/domains/#cname) your domain has.
-  - CNAMES must be added one per line, no punctuation.
-5. Activate the **CNAME Access Only** switch if you want your users to access your edge application only by CNAME.
-6. In **Edge Application**, select the one your **Domain** will be connected to from the dropdown list.
-7. Make sure the **Active** switch is on.
-8. Click the **Save** button.
-
-Done. Your custom domain is now connected to the edge application. 
-
-:::tip
-On the **Domains** page, you find all domains listed and relevant information about them, including the **Edge Certificate**, **Domain Name**, **CNAME**, and which edge application they're connected to.
-:::
-
 ### About Let's Encrypt
-If you selected a Let's Encrypt Certificate as the Digital Certificate associated with your custom domain, you need to complete a specific process to properly configure the DNS settings. To do so, see this guide on [How to generate a Let's Encrypt Certificate](/en/documentation/products/guides/how-to-generate-a-lets-encrypt-certificate/) for more details.
+If you selected a Let's Encrypt Certificate as the Digital Certificate associated with your custom domain, you need to complete a specific process to properly configure the DNS settings. Check this guide on [How to generate a Let's Encrypt Certificate](/en/documentation/products/guides/how-to-generate-a-lets-encrypt-certificate/) for more details.
 
-After customizing domain, it's time to [migrate your ns](#migrating-your-ns-to-azion) or [point your traffic to Azion](#pointing-your-domain-to-azion) and take advantage of the global distributed network and other products.
+After customizing domain, it's time to [migrate your ns](#migrating-your-ns-to-azion) or [point your traffic to Azion](#pointing-your-domain-to-azion) to use the global distributed network and other products.
 
 ---
 
@@ -74,6 +70,8 @@ Then, you must create a DNS zone and migrate your *name resolution* to Azion.
 
 </Button>
 
+---
+
 ## Pointing your domain to Azion
 
 To complete this task, you must have:
@@ -87,6 +85,8 @@ Then, you must configure your DNS third-party provider and associate the address
 <Button href="/en/documentation/products/guides/point-domain-to-azion/" text="Go to Point your domain to Azion guide" variant="secondary">
 
 </Button>
+
+---
 
 ## Next steps
 
