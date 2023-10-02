@@ -18,62 +18,31 @@ Azion **Edge Application** allows you to configure numerous settings, from behav
 Have an application and want to move to the edge? [Migrate to Azion](/en/documentation/products/guides/migrate-ns-to-azion/). Already work with a certain framework or have an infrastructure in mind? [Check the available Templates](/en/documentation/products/start-with-a-template/).
 :::
 
-To create an edge application,  you must have:
-
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-
-You can choose to configure your application using [Real-Time Manager (RTM)](#via-rtm), the [Azion CLI](#via-cli), or the [Azion API](#via-api).
-
 ## Via RTM
-
-To create a new edge application:
 
 1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the **Add Edge Application** button.
 4. Give your application a name.
+5. In **Delivery Protocol**, select **HTTP**.
+6. In **Ports HTTP**, keep the option **80 (Default)** selected.
+7. In **Origin Type**, select **Single Origin**.
+8. In **Address**, add your origin address in Host or IPv4 format. For example: `httpbin.org`.
+9. In **Origin Protocol Policy**, select the option **Preserve HTTP/HTTPS protocol**.
+10. In **Host Header**, select the variable `${host}`.
+11. In **Browser Cache Settings**, keep the option **Honor Origin Cache Headers** selected.
+12. In **CDN Cache Settings**, keep the option **Honor Origin Cache Settings** selected.
+13. In **Default TTL (seconds)**, keep the value `60`.
+14. Click the **Save** button.
 
-The following sections will walk you through each configuration option in the application creation process.
+Now your application is built, but you cannot access it using a browser because you need to launch it through a domain. To create a domain:
 
-### Main settings
-
-This section defines how your application will be delivered. Customize these options later by following the instructions in [Configuring your main settings](/en/documentation/products/guides/build/configure-main-settings/).
-
-1. In **Delivery Protocol**, select **HTTP**.
-2. In **Ports HTTP**, keep the option **80 (Default)** selected.
-
-### Origin
-
-Here you'll define where your content will be retrieved from. For the purposes of this guide, the [httpbin.org website](https://httpbin.org) will be the source of content for the application. This setting can be customized later in [Working with origins](/en/documentation/products/guides/build/work-with-origins/).
-
-1. In **Origin Type**, select **Single Origin**.
-2. In **Address**, add `httpbin.org`.
-3. In **Origin Protocol Policy**, select the option **Preserve HTTP/HTTPS protocol**.
-4. In **Host Header**, select the variable `${host}`.
-
-### Cache settings
-
-This is the section where you define how your application handles cache, be it caching at the edge or at the user's browser. In [Tuning your Cache Settings](/en/documentation/products/guides/build/tune-cache-settings/), you'll be able to further customize these and other settings.
-
-1. In **Browser Cache Settings**, keep the option **Honor Origin Cache Headers** selected.
-2. In **CDN Cache Settings**, keep the option **Honor Origin Cache Settings** selected.
-3. In **Default TTL (seconds)**, keep the value `60`.
-4. Click the **Save** button.
-
-### Domain
-
-Now your application is built, but you cannot access it using a browser because you need to launch it through a domain.
-
-When you create a domain at Azion and associate it to an edge application, you're given an automatically generated address that you can use or share to see your edge application online.
-
-To create a domain:
-
-1. Click the **Add Domain** button.
-2. Give your domain a name.
-3. In **Edge Certificate**, select the **Azion SAN** certificate.
-4. In **Edge Application**, select your edge application.
-5. Disable the **CNAME access only switch**. This will enable users to access your application using the `xxxxxxxxxx.map.azionedge.net` address.
-5. Click the **Save** button.
+15. Click the **Add Domain** button.
+16. Give your domain a name.
+17. In **Edge Certificate**, select the **Azion SAN** certificate.
+18. In **Edge Application**, select your edge application.
+19. Disable the **CNAME access only switch**. This will enable users to access your application using the `xxxxxxxxxx.map.azionedge.net` address.
+20. Click the **Save** button.
 
 Wait a few minutes for your new domain to propagate to the edge nodes and access your `xxxxxxxxxx.map.azionedge.net` address. You should now see your edge application online.
 
@@ -85,14 +54,7 @@ You can also create your application via the command line interface (CLI). Visit
 
 ## Via API
 
-Azion provides you an extensive API specification and documentation of its platform and features. This guide provides you with a sequence of Client URL (cURL) commands you can run in your machine's terminal, or in an API platform of your choosing, and execute tasks to have your edge application up and running.
-
-
-Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account.
-
-With your token in hand, follow the steps to create a new edge application and domain:
-
-1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token:
+1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/):
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications' \

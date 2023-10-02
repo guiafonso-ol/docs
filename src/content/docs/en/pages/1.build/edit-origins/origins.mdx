@@ -13,62 +13,28 @@ When you create an edge application with Azion, you have to set an origin, which
 
 <Button href="/en/documentation/products/edge-application/origins/" text="Go to Origins documentation" variant="secondary"></Button>
 
-To create a new origin for your edge application, you must have:
+## Via RTM
 
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-- An [edge application](/en/documentation/products/guides/build/overview/).
-- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
-
-You can choose to create and modify your origins using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
-
-### Via RTM
-
-In this section, you'll add a new origin to your application without overriding the origin you created when you first built your application.
-
-To configure your origins through RTM:
+To create a new origin:
 
 1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the edge application for which you want to configure a new origin.
 4. Select the **Origins** tab.
-
-On this screen, you'll see a list of origins for your application. A default origin must already exist in the list. To edit an existing origin, you can click the origin from the list.
-
-The following steps will help you create and activate a new origin using [HTTPbin](http://httpbin.org). The goal is for when users access your domain through the Azion address `xxxxxxxxxx.map.azionedge.net/httpbin`, the content from HTTPbin is retrieved from the `httpbin.org` address.
-
-For now, start by adding a new origin to your application:
-
-1. In the **Origins** tab, click the **Add Origin** button.
-2. Give your new origin a name.
-3. Under **Origin Type**, keep the option **Single Origin** selected.
-
-You can also choose the option **Load Balancer** if you have this product active in your account. For an in-depth look at load balancing, check [Work with multiple origins](link_lb_guide).
-
-4. Under **Host Header**, add `customheader.com`.
-
-This header is used to identify the particular application on the server that contains the required content. The default value is `${host}`, which takes the host from the URL of the request.
-
-5. Leave **Origin Path** blank.
-
-The path included in this field will be appended to the origin address, which should be an apex domain. You can add multiple layers to the path if needed.
-
-6. Under **Origin Protocol Policy**, select **Enforce HTTPS**.
-
-This will enforce an HTTPS connection with the origin, not affecting the protocol from user requests.
-
-7. Under **Address**, add `httpbin.org`.
-
-In this field, you can add a host or an IPv4 address.
-
-8. Click the **Save** button.
+5. Click the **Add Origin** button.
+6. Give your new origin a name. For example: `httpbin.org`
+7. Under **Origin Type**, keep the option **Single Origin** selected.
+8. Under **Host Header**, add `customhost.com`.
+9. Leave **Origin Path** blank.
+10. Under **Origin Protocol Policy**, select **Enforce HTTPS**.
+11. Under **Address**, add `httpbin.org`.
+12. Click the **Save** button.
 
 :::note
 If your origin is under a host followed by a path, such as `https://bucket.s3.amazonaws.com/applications/your-app`, you must separate the URL and add the host `bucket.s3.amazonaws.com` into the **Address** field and add the path `/applications/your-app` into the **Origin path** field.
 :::
 
-You've created a new origin, but it isn't active in your application yet. You need to define what will trigger a request to the new origin. For this, you can use your edge application's **Rules Engine**.
-
-The instructions below will help you create a rule in which any request from your users to the `xxxxxxxxxx.map.azionedge.net/httpbin` URI will show content from the `httpbin.org` application.
+You've created a new origin, but it isn't active in your application yet. You need to define what will trigger a request to the new origin. For this, you can use your edge application's **Rules Engine**:
 
 1. Navigate to the **Rules Engine** tab.
 2. Click the **Add Rule** button and select **Request Phase**.
@@ -85,15 +51,9 @@ The `${uri}` variable may already be selected by default if you didn't activate 
 8. Click the **Save** button.
 9. Wait a few minutes for the changes to propagate and access `xxxxxxxxxx.map.azionedge.net/httpbin`. 
 
-### Via API
+## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
-
-With your token and edge application ID in hand, follow the steps to create a new origin via API:
-
-1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application:
+1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/):
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/origins' \
@@ -116,7 +76,7 @@ curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id
   | Key | Description |
   | --- | --- |
   | `name` | Sets the string in value as a name of the origin. |
-  | `origin_type` | Sets the new origin type to `single_origin`. For more information on load balancing, check [Work with multiple origins](link_lb_guide). |
+  | `origin_type` | Sets the new origin type to `single_origin`. For more information on load balancing, check [Work with multiple origins](/documentation/products/guides/build/multiple-origins/). |
   | `addresses` | Takes a list of objects for each address of the origin. Since this is an entry of the single origin type, you may only send one `address` property. |
   | `origin_protocol_policy` | When `https`, enforces an HTTPS connection with the origin, not affecting the protocol from user requests. |
   | `host_header` | Sets the string in value as the value of the `Host` header sent to the origin. |
@@ -159,7 +119,7 @@ Endpoints that require origin identification use the `origin_key` value. For exa
 
 Now to activate the origin for your application:
 
-3. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token, the `<edge_application_id>` variable with the `id` of your edge application, and the `<origin_id>` variable with the origin ID from when you [created a new origin via API](#via-api):
+3. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/), the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/), and the `<origin_id>` variable with the origin ID from when you [created a new origin via API](#via-api):
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/rules_engine/request/rules' \

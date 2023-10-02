@@ -17,17 +17,7 @@ Implementing rules in your application allow you to determine the tasks it shoul
 To unlock the full capabilities of Rules Engine, you should activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module. If **Application Acceleration** is activated, data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 
-To create a rule, you must have:
-
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-- An [edge application](/en/documentation/products/guides/build/overview/).
-- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
-
-You can create rules through [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
-
 ## Via RTM
-
-In this section, you'll create two rules, one in each available phase, using **Rules Engine**. Rules created in the **Request phase** will be executed as soon as an end-user makes a request to your edge application while a rule in the **Response phase** will be executed before the response is delivered to the end-user. 
 
 First, activate the **Application Acceleration** module:
 
@@ -39,7 +29,7 @@ First, activate the **Application Acceleration** module:
 
 Starting with the request phase, these next steps will help you create a rule that rewrites a request. This way, you can create a rule to deliver content to an end-user from a specific URI without requiring that the exact path from the origin to be present in the request.
 
-Consider the scenario: when an end-user makes a request to your application for `xxxxxxxxxx.map.azionedge.net/page`, the content that should be delivered instead is from the path `/content/page.html`. To create a rule that will rewrite this request, still on the **Edge Application** page:
+When an end-user makes a request to your application for `xxxxxxxxxx.map.azionedge.net/page`, the content that should be delivered instead is from the path `/content/page.html`. To create a rule that will rewrite this request, still on the **Edge Application** page:
 
 1. Navigate to the **Rules Engine** tab.
 2. Click the **Add Rule** button.
@@ -52,17 +42,11 @@ Consider the scenario: when an end-user makes a request to your application for 
 9. As an argument, add `${uri}content/page.html`
 10. Click the **Save** button.
 
-Now, when a request is made to `xxxxxxxxxx.map.azionedge.net/page`, end-users should see the contents from the `/content/page.html` page without having to specify the entire address in their browser.
-
-As for the response page, you can create a rule that, for example, removes an HTTP header from the response using the **Filter Response Header** behavior.
-
-The `Server` header stores information about the server that generated the response. By removing this header, end-users won't receive information about the infrastructure of your application, enhancing your security by reducing the information available to potential attackers.
+As for the response phase, you can create a rule that removes an HTTP header from the response using the **Filter Response Header** behavior. The `Server` header stores information about the server that generated the response. By removing this header, end-users won't receive information about the infrastructure of your application, enhancing your security by reducing the information available to potential attackers.
 
 :::note
 Exercise caution when removing any headers from your edge application and ensure that this action doesn't interfere in any applicable standards and guidelines.
 :::
-
-To filter the `Server` header from the response, on the **Edge Application** page:
 
 1. Navigate to the **Rules Engine** tab.
 2. Click the **Add Rule** button.
@@ -75,17 +59,9 @@ To filter the `Server` header from the response, on the **Edge Application** pag
 9. As an argument, add `Server`.
 10. Click the **Save** button.
 
-Now, when a request is made to your application, the `Server` header will be removed from the response.
-
 ## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
-
-With your token and edge application ID in hand, follow the steps to create rules via API:
-
-1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module:
+1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module:
 
 ```bash
 curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edge_application_id>' \

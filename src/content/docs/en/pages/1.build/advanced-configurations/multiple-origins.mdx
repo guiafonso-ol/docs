@@ -13,29 +13,15 @@ Azion Edge Application requires at least one origin. However, more complex and r
 
 By distributing network traffic efficiently across several servers, these algorithms ensure no single server becomes overwhelmed, thereby preventing potential system crashes. Furthermore, they enable smoother user experiences by reducing load times and ensuring efficient use of resources. 
 
-<Button href="link_lb" text="Go to Load Balancer documentation" variant="secondary"></Button>
-
-To create a load balancer origin for your edge application, you must have:
-
-- An [Azion account](link_accounts).
-- An [edge application](link_build_with_edge_app).
-- An [Azion domain](link_config_domain).
+<Button href="/en/documentation/products/edge-application/load-balancer/" text="Go to Load Balancer documentation" variant="secondary"></Button>
 
 :::caution[warning]
 If **Load Balancer** is activated, data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 
-You can customize which load balancing algorithm your application will apply. You can choose between three methods:
-
-- **Round Robin**: works cycles requests among servers to ensure each one receives a request before it goes back to the first, assigning weights based on server capacity.
-- **Least Connections**: tracks current server connections, preventing overloading by redistributing to others and applying capacity-based weight assignment, but focusing on current server connections.
-- **IP Hash**: uses the client's and server's IP addresses to create a unique hash key for future reference, making the client return to the same server in future requests.
-
-You can choose to create and modify your origin using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
-
 ## Scenario
 
-The following steps will walk you through a hypothetical scenario where the default origin should be of the Load Balancer-type with the Round Robin algorithm. Feel free to interpret and modify the step-by-step instructions according to your specific use case.
+The following steps will walk you through a hypothetical scenario where the default origin should be of the Load Balancer-type with the [Round Robin algorithm](/en/documentation/products/edge-application/load-balancer/#balancing-method). Feel free to interpret and modify the step-by-step instructions according to your specific use case.
 
 In this scenario, the following business rules of different origin servers must be configured with load balancing:
 
@@ -58,14 +44,14 @@ Therefore, the setup should look like this:
 
 First, to enable **Load Balancer** through RTM:
 
-1. [Access RTM](link_rtm).
+1. [Access RTM](https://manager.azion.com).
 2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
 3. Click the edge application for which you want to configure a new origin with load balancer.
 4. On the **Main Settings** tab, under **Modules**, activate **Load Balancer**.
 5. Click the **Save** button.
 
 :::caution[warning]
-In this section, you'll modify your default origin, which is of the Single Origin-type, into a Load Balancer-type origin. Editing your default origin will override the origin you configured when creating the edge application. To create a different origin, see [Work with origins](link_wwo).
+In this section, you'll modify your default origin, which is of the Single Origin-type, into a Load Balancer-type origin. Editing your default origin will override the origin you configured when creating the edge application. To create a different origin, see [Work with origins](/en/documentation/products/guides/build/work-with-origins/).
 :::
 
 Now, to customize the origin according to the [scenario](#scenario) described above:
@@ -95,13 +81,7 @@ Wait a few minutes for the changes to propagate. Then, access your application o
 
 ## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you'll need to [generate a personal token](link_personal_token) for your account. You also need to [retrieve your edge application ID](link_configure_edge_app) to run the following requests.
-
-With your token and edge application ID in hand, follow the steps to modify the default origin into a Load Balancer-type according to the [scenario](#scenario) described:
-
-1. Run the following `GET` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and `<edge_application_id>` with the ID of your application to retrieve your default origin's `<origin_key>`, which is a UUID value:
+1. Run the following `GET` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to retrieve your default origin's `<origin_key>`, which is a UUID value:
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id> \
@@ -198,5 +178,5 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edg
 6. Wait a few minutes for the propagation to occur.
 
 :::tip
-Check the [Azion API documentation](link_azionapi) and the [OpenAPI specification](link_openapi) to know find out more about the Azion API.
+Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::

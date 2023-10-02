@@ -17,17 +17,7 @@ Instantiate serverless functions created with [Edge Functions](/en/documentation
 You must activate the [Edge Functions](/en/documentation/products/edge-application/application-acceleration/) module to implement functions in your application. If **Edge Functions** is activated, computing time and invocations could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 
-To instantiate and run a function, you must have:
-
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-- An [edge application](/en/documentation/products/guides/build/overview/).
-- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
-
-:::tip
 For this guide, you can use any function already available on [Azion Marketplace](https://marketplace.azion.com/) or create your own. Check the guide on [How to build an API with Edge Functions and ChatGPT](/en/documentation/products/guides/edge-functions/api-builder/) for an example of a function you can run in your application. 
-:::
-
-You can instantiate edge functions through [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
 
 ## Via RTM
 
@@ -51,7 +41,7 @@ To instantiate the *Hello World* function, still on the **Edge Application** pag
 
 The functions page now lists the newly created instance. However, this new function isn't yet active in your application. You need to define what will trigger the function in your application. For this, you can use your edge application's **Rules Engine**.
 
-The instructions below will help you create a rule in which any request from your users to `xxxxxxxxxx.map.azionedge.net/hello-world` will invoke the instantiated function.
+To invoke the instantiated function in the URI `xxxxxxxxxx.map.azionedge.net/hello-world`:
 
 1. Still on the **Edge Application** page, navigate to the **Rules Engine** tab.
 2. Click the **Add Rule** button and select **Request Phase**.
@@ -71,13 +61,7 @@ To see your function running, access your application using its domain and the U
 
 ## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
-
-With your token and edge application ID in hand, follow the steps to instantiate an edge function via API:
-
-1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Edge Functions](/en/documentation/products/edge-application/edge-functions/) module:
+1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to activate the [Edge Functions](/en/documentation/products/edge-application/edge-functions/) module:
 
 ```bash
 curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edge_application_id>' \
@@ -159,7 +143,7 @@ curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id
   | `args` | Definition of arguments required for the function. Some functions don't take arguments. |
   | `id` | ID of the instantiated function. |
   
-8. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token, the `<edge_application_id>` variable with the `id` of your edge application, and the `<edge_function_instance_id>` variable with the function instance ID received in the previous response:
+8. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/), the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/), and the `<edge_function_instance_id>` variable with the function instance ID received in the previous response:
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/rules_engine/request/rules' \

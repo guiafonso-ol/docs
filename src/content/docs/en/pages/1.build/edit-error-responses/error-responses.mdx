@@ -13,14 +13,7 @@ With **Error Responses**, you can configure your edge application to handle erro
 
 <Button href="/en/documentation/products/edge-application/error-responses/" text="Go to Error Responses documentation" variant="secondary"></Button>
 
-To modify your application's error responses, you must have:
-
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-- An [edge application](/en/documentation/products/guides/build/overview/).
-- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
-- A [configured origin](/en/documentation/products/guides/build/work-with-origins/).
-
-## Configuring your error responses via RTM
+## Via RTM
 
 In this section, you'll modify your **Default Error Response** by determining a cache TTL for each error received from the origin, as well as specifying custom error responses, cache TTL, and pages.
 
@@ -34,16 +27,13 @@ To customize error responses:
 In the **Error Responses** section, the **Status Code** field can't be modified. This field represents every error status code received from the origin. The **Error Caching TTL (seconds)** field below it allows you to customize the cache TTL for every status code received.
 
 5. Under **Error Caching TTL (seconds)**, set the cache *time-to-live* (TTL), in seconds, for all error pages.
-
-To customize settings for specific error codes received:
-
 6. Click the **+** button.
-7. In the new **Status Code** field, select the status code you want to customize.
+7. In the new **Status Code** field, select the status code you want to customize. For example: `404`.
 8. Add a cache TTL in the **Error Caching TTL (seconds)** field.
 
-You can also determine a specific path from your origin that will be delivered to the user and a custom status code in the response. These modifications are optional. 
+You can also determine a specific path from your origin that will be delivered to the user and a custom status code in the response. These modifications are optional:
 
-9. In the **URI** field, add a *path* to an error page created in the source.
+9. In the **URI** field, add a *path* to an error page created in the source. For example: `/error/404`.
 10. In the **Custom Status Code** field, customize the HTTP status that'll be received by the user.
 11. In the **Origin** section, select the origin of error page URIs.
 12. Click the **Save** button.

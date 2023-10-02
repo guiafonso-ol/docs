@@ -17,14 +17,6 @@ Through the **Image Processor** module, you can adjust image sizes, add filters 
 If you wish to optimize your images, in addition to the **Image Processor module, the activation of the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) module is recommended for cache efficiency. If these modules are activated, images processed and data transfer could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 :::
 
-To activate this module and start processing your images, you must have:
-
-- An Azion [account and credentials](/en/documentation/products/accounts/creating-account/).
-- An [edge application](/en/documentation/products/guides/build/overview/).
-- An [Azion or custom domain](/en/documentation/products/guides/configure-a-domain/).
-
-You can optimize your images through the [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
-
 ## Via RTM
 
 1. [Access RTM](https://manager.azion.com).
@@ -65,19 +57,11 @@ To ensure images are successfully converted to WEBP format, you must also add th
 
 12. Click the **Save** button to save your rule.
 
-From this point on, images from the configured path will be automatically processed. 
-
 To confirm whether your image is being optimized, [inspect the page](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) using your browser and find the corresponding path in the image. In the URL's query string, the `ims=VALUExVALUE` field corresponds to the resolution loaded on the page. To see the original file, you only need to remove the query string added in the URL.
 
 ## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you'll need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account. You also need to [retrieve your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to run the following requests.
-
-With your token and edge application ID in hand, follow the steps to activate image processor via API:
-
-1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application to activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) and [Image Processor](/en/documentation/products/edge-application/image-processor/) modules:
+1. Run the following `PATCH` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_application_id>` variable with [your edge application ID](/en/documentation/products/guides/build/configure-main-settings/) to activate the [Application Acceleration](/en/documentation/products/edge-application/application-acceleration/) and [Image Processor](/en/documentation/products/edge-application/image-processor/) modules:
 
 ```bash
 curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edge_application_id>' \
@@ -91,7 +75,7 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_applications/<edg
 ```
 
 2. You'll receive a response with the updated value.
-3. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token and the `<edge_application_id>` variable with the `id` of your edge application:
+3. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/) and the `<edge_application_id>` variable with the `id` of your edge application:
 
 ```bash
 curl --location 'https://api.azionapi.net/edge_applications/<edge_application_id>/cache_settings' \
@@ -235,7 +219,5 @@ For more information on the rules endpoint, see [Work with Rules Engine](/en/doc
 :::tip
 Check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
 :::
-
-From this point on, images from the configured path will be automatically processed. 
 
 To confirm whether your image is being optimized, [inspect the page](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools) using your browser and find the corresponding path in the image. In the URL's query string, the `ims=VALUExVALUE` field corresponds to the resolution loaded on the page. To see the original file, you only need to remove the query string added in the URL.

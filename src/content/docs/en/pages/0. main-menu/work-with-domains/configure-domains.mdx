@@ -20,8 +20,6 @@ Before you create your Azion domain, you must have:
 Don't have an edge application? [Build with edge application](/en/documentation/products/guides/build/build-with-edge-application/) or [check the available templates](/en/documentation/products/start-with-a-template/).
 :::
 
-You can choose to configure your domain using [Real-Time Manager (RTM)](#via-rtm) or the [Azion API](#via-api).
-
 ## Via RTM
 
 When you create an application [using a template](/en/documentation/products/start-with-a-template/) or [via CLI](/en/documentation/products/build/develop-with-azion/cli/), your application is automatically associated with an Azion domain. To check your created domains:
@@ -43,13 +41,7 @@ Wait some minutes for your new domain to propagate to the edge nodes and access 
 
 ## Via API
 
-This section contains a sequence of Client URL (cURL) commands you can run in a command terminal or in an API platform of your choosing. 
-
-Before you run the Azion API, you need to [generate a personal token](/en/documentation/products/guides/personal-tokens/) for your account.
-
-With your credentials in hand, follow the steps to create an Azion domain via API:
-
-1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your personal token, the `<edge_application_id>` variable with the `id` of your edge application:
+1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/), the `<edge_application_id>` variable with the `id` of your edge application:
 
 ```bash
 curl --location 'https://api.azionapi.net/domains' \
