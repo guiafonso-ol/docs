@@ -7,12 +7,11 @@ permalink: /documentation/products/guides/use-real-time-metrics/
 ---
 
 import Button from '~/components/Button.astro'
+import Badge from '~/components/Badge.astro';
 
-**Real-Time Metrics** provides you with real-time access to metrics, through charts. Once you've created an edge application or even configured other product and modules, you can view your application's events. Charts exhibit data as soon as your applications begin to have incoming accesses and traffic.
+**Real-Time Metrics** provides real-time access to metrics through charts. Charts exhibit data as soon as your applications and other products begin to have incoming accesses and traffic.
 
 <Button href="/en/documentation/products/real-time-metrics/" text="go to Real-Time Metrics reference" variant="secondary"></Button>
-
-Continue reading this guide to find out how to use and configure Real-Time Metrics on Azion to analyze the events related to the performance of your applications.
 
 :::note
 The new Real-Time Metrics provides data and metrics starting from **October 15th, 2022**. If you want to view metrics for up to 2 years and before October 15th, 2022, see [Historical Real-Time Metrics](/en/documentation/products/historical-real-time-metrics/).
@@ -20,57 +19,40 @@ The new Real-Time Metrics provides data and metrics starting from **October 15th
 
 ---
 
-## Accessing
-
-After creating your edge application and/or configuring other products:
-
-1. [Access Real-Time Manager (RTM)](https://manager.azion.com/).
-2. On the upper-left corner, on the **Products menu**, represented by three horizontal lines, select **Real-Time Metrics** on the **OBSERVE** section.
-
-The Real-Time Metrics page opens on the **Edge Applications** tab by default.
-
----
-
 ## Configuring products and a data interval
+
+Access [Real-Time Manager (RTM)](https://manager.azion.com/) and select **Products menu** > **Real-Time Metrics** on the **OBSERVE** section.
 
 To analyze your metrics, you first need to select a product and configure a data interval:
 
 1. Select one of the three available categories on the dropdown menu:
-    - **Build**
-    - **Secure**
-    - **Observe**
 
-2. After selecting a category, select a tab according to the product you want to view:
+    <Badge>Build</Badge> <Badge>Secure</Badge> <Badge>Observe</Badge>
+
+2. Select a tab according to the product you want to view:
 
 -  **Build**
-    - **Edge Application**
-    - **L2 Caching**
-    - **Edge Functions**
-    - **Image Processor**
+
+    <Badge>Edge Application</Badge> <Badge>L2 Caching</Badge> <Badge>Edge Functions</Badge> <Badge>Image Processor</Badge>
 
 - **Secure**
-    - **WAF**
-    - **Intelligent DNS**
 
-- Observe
-    - **Data Streaming**
+    <Badge>WAF</Badge> <Badge>Intelligent DNS</Badge>
+
+- **Observe**
+
+    <Badge>Data Streaming</Badge>
 
 3. On **Time range**, select a time period from the options to fetch the data that'll be exhibited on the charts:
-    - **Last Hour**
-    - **Last 24 Hours**
-    - **Last 7 Days**
-    - **Last 30 Days**
-    - **Last 6 Months**
-    - Manually set beginning and ending dates
+
+    <Badge>Last Hour</Badge> <Badge>Last 24 Hours</Badge> <Badge>Last 7 Days</Badge> <Badge>Last 30 Days</Badge> <Badge>Last 6 Months</Badge>
 
 4. If you want to use a different date from the options, click the calendar fields and select a beginning and ending date and time.
 5. If you've selected the **Edge Applications** product tab, select between one of the four subtabs:
-    - **Data Transferred**
-    - **Requests**
-    - **Status Codes**
-    - **Bandwidth Saving**
 
-After you configure a data interval, all charts from all tabs will be automatically refreshed with the metrics from the chosen time period.
+    <Badge>Data Transferred</Badge> <Badge>Requests</Badge> <Badge>Status Codes</Badge> <Badge>Bandwidth Saving</Badge>
+
+All charts from all tabs are automatically refreshed after applying a time range.
 
 ---
 
@@ -80,7 +62,7 @@ Once you've selected a tab to view charts, you can:
 
 - Add filters.
 - Choose a data interval.
-- Use the **(?) Get help** tags to learn more about each chart.
+- Use the **Get help** tags to learn more about each chart.
 
 To analyse a chart:
 
