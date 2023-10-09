@@ -7,10 +7,10 @@ permalink: /documentation/products/guides/point-domain-to-azion/
 ---
 import Button from '~/components/Button.astro'
 
-To point your traffic to Azion, you must associate your **Azion domain** to your **custom domain**. To do that, you must configure your DNS provider and associate the address of your custom domain to the `xxxxxxxxxx.map.azionedge.net` address. 
+To point your traffic to Azion, you must associate your custom domain CNAME entries to your Azion domain address through [Domains](/documentacao/produtos/edge-application/domains/).
 
 :::note
-This process will require you to associate a CNAME record to your domain. See [Migrate your DNS to Azion](/en/documentation/products/guides/migrate-ns-to-azion/) for more information on how to associate an ANAME type record.
+This process will require you to associate a CNAME record to your domain. See [Migrate your DNS to Azion](/en/documentation/products/guides/migrate-ns-to-azion/) for more information on how to associate an ANAME record.
 :::
 
 ## Verify custom domain
@@ -46,7 +46,7 @@ curl --location 'https://api.azionapi.net/domains?order_by=name&sort=asc&page=1&
     "results": [
         {
             "id": <domain_id>,
-            "name": "My Domain",
+            "name": "yourdomain.com CA1 DC-yourdomain.com",
             "cnames": [],
             "cname_access_only": true,
             "digital_certificate_id": <digital_certificate_id>,
@@ -68,6 +68,7 @@ curl --location --request PATCH 'https://api.azionapi.net/domains/<domain_id>' \
 --header 'Content-Type: application/json' \
 --data '{
     "cnames": [
+        "yourdomain.com",
         "*.yourdomain.com"
     ]
 }'
@@ -82,8 +83,6 @@ If your application uses HTTPS, you might want to combine this process with the 
 :::
 
 5. You should receive a response with the updated data.
-
----
 
 ## Modify domain records
 
