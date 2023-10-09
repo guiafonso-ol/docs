@@ -14,21 +14,7 @@ export default [
 	{ text: 'Learn', header: true, onlyMobile: true, anchor: true, type: 'learn', slug: 'https://learn.azion.com/', key: 'Learn' },
 
 
-	{
-		text: 'Edge foundations', header: true, type: 'learn', key: 'edgeFoundations', hasLabel: 'menu.begin', children: [
-			{ text: 'What is edge computing', slug: '/documentation/products/edge-foundations/what-is-edge-computing/', key: 'EdgeComputingIs' },
-			{ text: 'How edge computing works', slug: '/documentation/products/edge-foundations/how-edge-computing-works/', key: 'edgeComputingWorks' },
-			{ text: 'Characteristics of an edge-native platform', slug: '/documentation/products/edge-foundations/edge-native-platforms/', key: 'edgeNativePlatform' },
-		]
-	},
-	{
-		text: 'Azion foundations', header: true, type: 'learn', key: 'azionFoundations', children: [
-			{ text: 'About Azion Edge Platform', slug: '/documentation/products/azion-foundations/about-azion-edge-platform/', key: 'aboutAzionPlatform' },
-			{ text: 'How Azion Edge Platform works', slug: '/documentation/products/azion-foundations/how-azion-edge-platform-works/', key: 'howWorksAzionPlatform' },
-			{ text: 'Azion products catalog', slug: '/documentation/products/azion-foundations/azion-products-catalog/', key: 'productsAzion' },
-			{ text: 'Explore Azion', slug: '/documentation/products/azion-foundations/explore-azion/', key: 'startUsingAzion' },
-		]
-	},
+	{ text: 'Core concepts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/core-concepts/', key: 'beforeBegin/core', hasLabel:'menu.begin' },
 
 	{ text: 'Understand your account WIP', header: true, anchor: true, type: 'learn', slug: '/documentation/', key: 'accountsProfile/createAccount' },
 
