@@ -41,7 +41,7 @@ Getting modes available
 3. Choose the Next template: 
 
 ```sh 
-Getting modes available? Choose a template for your project: (Use arrow keys)
+Getting templates available? Choose a template for your project: (Use arrow keys)
   Angular 
   Astro 
   Hexo 
@@ -53,17 +53,12 @@ Getting modes available? Choose a template for your project: (Use arrow keys)
 
 Now, Next's CLI will follow the process and initialize your Next project.
 
-4. After the initialization is complete, choose the mode:
+4. After the initialization is complete, choose the mode `deliver`:
 
 ```sh 
-Choose a mode:  [Use arrows to move, type to filter]
-  Javascript (Compute)
-  Typescript (Compute)
-  Angular (Deliver)
-> Next (Deliver)
-  Hexo (Deliver)
-  Next (Deliver)
-  React (Deliver)
+? Choose the deliver mode:  [Use arrows to move, type to filter]
+   Compute
+>  Deliver
 ```
 
 5. With the template fetched and configured, you can now start a local development server.
@@ -83,6 +78,24 @@ The following steps are based on the answer you gave.
 
 ```sh 
   Do you want to install project dependencies? This may be required to start local development server (y/N)
+```
+
+Add the output inside your `next.config.js` file: 
+
+```
+output: "export"
+```
+
+Your `next.config.js` file: 
+
+```
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  output: "export"
+}
+
+module.exports = nextConfig
 ```
 
 Wait until the installation is complete.
