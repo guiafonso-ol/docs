@@ -55,21 +55,7 @@ export default [
 
         ]
     },
-    {
-        text: 'Framework specific guides', header: true, type: 'learn', key: 'frameworkSpecifics', children: [
-            { text: 'Overview', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/overview/', key: 'frameworkAngular' },
-            { text: 'Angular', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/angular', key: 'frameworkAngular' },
-            { text: 'Next.js', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/next', key: 'frameworkNext' },
-            { text: 'Nuxt WIP', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/nuxt', key: 'frameworkNuxt' },
-            { text: 'Vue', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/vue', key: 'frameworkVue' },
-            { text: 'Astro', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/astro', key: 'frameworkAstro' },
-            { text: 'Vite', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/vite', key: 'frameworkVite' },
-            { text: 'React', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/react', key: 'frameworkReact' },
-            { text: 'Hexo', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/hexo/', key: 'frameworkHexo' },
-
-
-        ]
-    },
+    { text: 'Framework specific guides', header: true, anchor: true, type: 'learn', slug: '/documentation/products/build/develop-with-azion/frameworks-specific/overview/', key: 'frameworkAngular' },
 
     {
         text: 'Language specific guides', header: true, type: 'learn', key: 'languageSpecifics',addBorder: true, children: [
