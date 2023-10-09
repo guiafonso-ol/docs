@@ -7,9 +7,7 @@ permalink: /documentation/products/guides/migrate-ns-to-azion/
 ---
 import Button from '~/components/Button.astro'
 
-Azion allows you to host and manage DNS zones and records by redirecting the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through **Intelligent DNS**.
-
-<Button href="/en/documentation/products/intelligent-dns/" variant="secondary" text="Go to Intelligent DNS documentation"></Button>
+Azion allows you to host and manage DNS zones and records by redirecting the DNS resolution of your domain provider to Azion's authoritative nameservers (NS) through [Intelligent DNS](/en/documentation/products/intelligent-dns/).
 
 :::caution[warning]
 If **Intelligent DNS** is activated, hosted zones and queries could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
@@ -19,15 +17,14 @@ If **Intelligent DNS** is activated, hosted zones and queries could generate usa
 
 ### Via RTM
 
-To create a DNS zone for a domain entry `www.yourdomain.org` in RTM:
+To create a DNS zone for a domain entry `yourdomain.org`:
 
 1. [Access RTM](http://manager.azion.com).
-2. On the upper-left corner of the page, click the three horizontal lines to open the **Products menu**.
-3. Under the section SECURE, select **Intelligent DNS**.
-4. If you don't have an active zone yet, click the **Add Zone** button.
-5. Give your zone an easy-to-remember name.
-6. Indicate the FQDN as recorded in the DNS. Example: `yourdomain.org`.
-7. Click the **Save** button.
+2. On the upper-left corner of the page, click the three horizontal lines to open the **Products menu** and select **Intelligent DNS**.
+3. Click the **Add Zone** button.
+4. Give your zone an easy-to-remember name.
+5. Indicate the FQDN as recorded in the DNS. Example: `yourdomain.org`.
+6. Click the **Save** button.
 
 You'll be redirected to your list of zones. To get the Azion nameservers:
 
@@ -50,7 +47,7 @@ curl --location 'https://api.azionapi.net/intelligent_dns' \
 --header 'Accept: application/json; version=3' \
 --header 'Content-Type: application/json' \
 --data '{
-    "name": "yourdomain.com - zone",
+    "name": "yourdomain.com",
     "domain": "yourdomain.com",
     "is_active": true
 }'
@@ -59,7 +56,7 @@ curl --location 'https://api.azionapi.net/intelligent_dns' \
   | Key | Description |
   | --- | --- |
   | `name` | Sets the string in the value as a name of the zone entry with Azion. |
-  | `domain` | Sets the apex domain to `yourdomain.com`. |
+  | `domain` | Sets the apex domain. |
   | `is_active` | When `true`, activates the zone. |
 
 2. You'll receive a response similar to this:
@@ -71,7 +68,7 @@ curl --location 'https://api.azionapi.net/intelligent_dns' \
             "nx_ttl": 3600,
             "domain": "yourdomain.com",
             "retry": 7200,
-            "name": "yourdomain.com - zone",
+            "name": "yourdomain.com",
             "nameservers": [
                 "ns1.aziondns.net",
                 "ns2.aziondns.com",
@@ -150,7 +147,7 @@ curl --location 'https://api.azionapi.net/domains' \
     "results": [
         {
             "id": <domain_id>,
-            "name": "My Domain",
+            "name": "yourdomain.com CA1 DC-yourdomain.com",
             "cnames": [],
             "cname_access_only": true,
             "digital_certificate_id": <digital_certificate_id>,
@@ -172,17 +169,18 @@ curl --location --request PATCH 'https://api.azionapi.net/domains/<domain_id>' \
 --header 'Content-Type: application/json' \
 --data '{
     "cnames": [
-        "www.yourdomain.com"
+        "yourdomain.com",
+        "*.yourdomain.com"
     ]
 }'
 ```
 
   | Key | Description |
   | --- | --- |
-  | `cnames` | Accepts a list of CNAMEs for the domains as values. For example, `["www.yourdomain.com", "blog.yourdomain.com"]`. |
+  | `cnames` | Accepts a list of CNAMEs for the domains as values. For example, `["*.yourdomain.com", "blog.yourdomain.com"]`. |
 
 :::tip
-Add a wildcard (`*`) subdomain instead of a specific subdomain to cover all possible scenarios. This way, you won't need to create multiple records for `www.yourdomain.com` and `blog.yourdomain.com` if they point to the same edge application address.
+Add a wildcard (`*`) subdomain instead of a specific subdomain to cover all possible scenarios. This way, you won't need to create multiple records for `www.yourdomain.com` and `blog.yourdomain.com` if they point to the same edge application.
 :::
 
 5. Run a new `GET` request to retrieve the `hosted_zone_id`, which indicates [the DNS zone you created](#create-a-dns-zone):
