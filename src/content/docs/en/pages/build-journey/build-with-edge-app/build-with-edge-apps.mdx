@@ -1,152 +1,47 @@
 ---
-title: Build with Edge Application
+title: Build an application
 description: Boost the performance of your applications with Azion Edge Application.
 meta_tags: build, edge application, edge network, edge computing
 namespace: docs_guides_build_edge_application
 menu_namespace: buildMenu
 og_image: ''
-permalink: /documentation/products/guides/build/build-with-edge-application/
+permalink: /documentation/products/guides/build/build-an-application/
 ---
 
-import Button from '~/components/Button.astro'
+[Edge Application](/en/documentation/products/edge-application/) allows you adjust various delivery settings and define the variables of your application. It also enables you to automate actions at the request-response level. 
 
-Azion **Edge Application** allows you to configure numerous settings, from behaviors at the request-response layer to how the edge stores your cache. You may look into the reference documentation for each functionality for more information, but for now, start by creating an edge application that will serve as a blank canvas.
+Azion provides a range of tools to configure your application at the edge: 
 
-<Button href="/en/documentation/products/edge-application/" variant="secondary" text="Go to Edge Application documentation"></Button>
+- [Real-Time Manager (RTM)](https://manager.azion.com): provides a user-friendly interface to configure your application and monitor data.
+- [Azion CLI](/en/documentation/products/build/develop-with-azion/cli/): enables the team to interact with Azion's system directly from the command line interface.
+- [Azion API](https://api.azion.com): allows you to integrate and automate application deployment, scaling, and monitoring processes.
+- [Terraform](/en/documentation/products/terraform-provider/): integrate your infrastructure with Azion using Terraform.
+- [Azion SDK](/en/documentation/devtools/sdk/go/): improve the development of your Go application.
+- [Edge Runtime](/en/documentation/products/edge-application/edge-functions/runtime/overview/): leverage APIs for networking and data handling.
 
-:::tip
-Have an application and want to move to the edge? [Migrate to Azion](/en/documentation/products/guides/migrate-ns-to-azion/). Already work with a certain framework or have an infrastructure in mind? [Check the available Templates](/en/documentation/products/start-with-a-template/).
-:::
+## Step 1: Configure application
 
-## Via RTM
+After you [create your application](/en/documentation/products/start-with-a-template/), you can change the protocols, delivery ports and the encryption type that it uses to interface with your end-users. 
 
-1. [Access RTM](https://manager.azion.com).
-2. On the upper-left corner of the page, open the **Products menu**, represented by three horizontal lines, and then select **Edge Application**.
-3. Click the **Add Edge Application** button.
-4. Give your application a name.
-5. In **Delivery Protocol**, select **HTTP**.
-6. In **Ports HTTP**, keep the option **80 (Default)** selected.
-7. In **Origin Type**, select **Single Origin**.
-8. In **Address**, add your origin address in Host or IPv4 format. For example: `httpbin.org`.
-9. In **Origin Protocol Policy**, select the option **Preserve HTTP/HTTPS protocol**.
-10. In **Host Header**, select the variable `${host}`.
-11. In **Browser Cache Settings**, keep the option **Honor Origin Cache Headers** selected.
-12. In **CDN Cache Settings**, keep the option **Honor Origin Cache Settings** selected.
-13. In **Default TTL (seconds)**, keep the value `60`.
-14. Click the **Save** button.
+For protocols, can choose whether to deliver your application via **HTTP or HTTPS**. HTTP is largely used in instances where the data being transferred doesn't need to be secure, whereas HTTPS provides an extra level of security through encryption. A customized **delivery port** can optimize network traffic, helping you to better manage the data flow, which can improve the speed and efficiency of your network. More importantly, it improves security by making the entry point into your networks less predictable.
 
-Now your application is built, but you cannot access it using a browser because you need to launch it through a domain. To create a domain:
+As for encryption, implementing [Transport Layer Security (TLS) encryption](/en/documentation/products/guides/create-a-digital-certificate/) to HTTPS applications ensures that data transfers between user devices and your servers are private.
 
-15. Click the **Add Domain** button.
-16. Give your domain a name.
-17. In **Edge Certificate**, select the **Azion SAN** certificate.
-18. In **Edge Application**, select your edge application.
-19. Disable the **CNAME access only switch**. This will enable users to access your application using the `xxxxxxxxxx.map.azionedge.net` address.
-20. Click the **Save** button.
+Start by [customizing your main settings](/en/documentation/products/guides/build/configure-main-settings/) and [linking your application to a domain](/en/documentation/products/guides/configure-a-domain/).
 
-Wait a few minutes for your new domain to propagate to the edge nodes and access your `xxxxxxxxxx.map.azionedge.net` address. You should now see your edge application online.
+## Step 2: Set variables
 
-<Button href="/en/documentation/products/guides/configure-a-domain/" variant="secondary" text="Configure a domain"></Button>
+Next, you can configure your application's behavior by setting variables and parameters that can be customized for each application to fit the requirements of your application. You can define the following instances:
 
-## Via CLI
+- **Cache setting**: [tune cache settings at the edge](/en/documentation/products/guides/build/tune-cache-settings/) to reduce the load on origin servers and speed up delivery. Define values such as browse and edge cache expiration, file slicing, cache keys, and adaptive delivery based on devices.
+- **Origin setting**: [adjust your origin settings](/en/documentation/products/guides/build/work-with-origins/) to fit the needs of your application and define your the values of the `Host` header and address. 
+- **Device group**: [group end-users based on their devices](/en/documentation/products/guides/build/create-device-groups/), operating systems, or browsers with information provided by the `User-Agent` header.
+- **Edge function**: [instantiate functions](/en/documentation/products/guides/build/instantiate-edge-functions/) to minimize resource usage by processing at the edge.
 
-You can also create your application via the command line interface (CLI). Visit the [CLI documentation](/en/documentation/products/build/develop-with-azion/cli/) to install the **Azion CLI** on your computer.
+Some variables may have already been created by default when you first built your application. You can edit your default settings or create new ones if necessary.
 
-## Via API
+## Step 3: Activate settings
 
-1. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/):
+To use your variables, you need to [set up rules](/en/documentation/products/guides/build/work-with-rules-engine/) that trigger specific actions in your application. 
 
-```bash
-curl --location 'https://api.azionapi.net/edge_applications' \
---header 'Accept: application/json; version=3' \
---header 'Authorization: Token [TOKEN VALUE]' \
---header 'Content-Type: application/json' \
---data '{
-    "name": "httpbin.org",
-    "delivery_protocol": "http",
-    "http_port": [80],
-    "origin_type": "single_origin",
-    "address": "httpbin.org",
-    "origin_protocol_policy": "preserve",
-    "host_header": "${host}",
-    "browser_cache_settings": "honor",
-    "cdn_cache_settings": "honor",
-    "cdn_cache_settings_maximum_ttl": 60
-}'
-```
-
-2. You'll recieve a response confirming the creation of your edge application. It should look like this:
-
-```json
-{
-    "results": {
-        "id": <edge_application_id>,
-        "name": "httpbin.org",
-        "delivery_protocol": "http",
-        "http_port": [
-            80
-        ],
-        "https_port": [
-            443
-        ],
-        "minimum_tls_version": "tls_1_3",
-        "active": true,
-        "debug_rules": false,
-        "http3": false,
-        "websocket": false,
-        "supported_ciphers": "all",
-        "application_acceleration": false,
-        "caching": true,
-        "device_detection": false,
-        "edge_firewall": false,
-        "edge_functions": false,
-        "image_optimization": false,
-        "load_balancer": false,
-        "raw_logs": false,
-        "web_application_firewall": false
-    }
-}
-```
-
-3. Copy the value from the `id` field.
-4. Run the next `POST` command to create a domain, replacing the `<edge_application_id>` variable with the `id` of your edge application from the previous response:
-
-```bash
-curl --location 'https://api.azionapi.net/domains' \
---header 'Accept: application/json; version=3' \
---header 'Authorization: Token [TOKEN VALUE]' \
---header 'Content-Type: application/json' \
---data '{
-    "name": "httpbin.org - domain",
-    "cname_access_only": false,
-    "edge_application_id": <edge_application_id>
-}'
-```
-
-5. You'll receive a response similar to this:
-
-```json
-{
-    "results": {
-        "id": <domain_id>,
-        "name": "httpbin.org - domain",
-        "cnames": [],
-        "cname_access_only": false,
-        "digital_certificate_id": null,
-        "edge_application_id": <edge_application_id>,
-        "is_active": true,
-        "domain_name": "xxxxxxxxxx.map.azionedge.net",
-        "environment": "production",
-        "is_mtls_enabled": false,
-        "mtls_verification": "enforce",
-        "mtls_trusted_ca_certificate_id": null,
-        "edge_firewall_id": null
-    }
-}
-```
-
-6. Since the `domain_name` received in the response carries your application's Azion domain as a string, you need to wait a few minutes for the changes to propagate. Then, paste the value within double quotes (`"`) in your browser to access your application.
-
-:::tip
-Want to integrate with the Azion API using another framework? [Start developing with Azion](/en/documentation/products/build/develop-with-azion/overview/). Also, check the [Azion API documentation](https://api.azion.com/) and the [OpenAPI specification](https://github.com/aziontech/azionapi-openapi/) to know more about all features available via API.
-:::
+In both the request and response processing stages, you can tailor a set of rules to handle requests according to the requirements of your application. This allows you to automate responses to user interactions, manage data flow, and carry out tasks based on incoming requests or outgoing responses, all governed by conditional business logic.
