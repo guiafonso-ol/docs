@@ -15,7 +15,7 @@ export default [
 
     /// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
     { text: 'Overview', header: true, anchor: true, slug: '/documentation/products/guides/build/overview/', key: 'buildOverview', hasLabel: 'menu.build' },
-    { text: 'Build with Edge Application', header: true, anchor: true, slug: '/documentation/products/guides/build/build-an-application/', key: 'buildEdgeApps' },
+    { text: 'Build an application', header: true, anchor: true, slug: '/documentation/products/guides/build/build-an-application/', key: 'buildEdgeApps' },
 
     {
         text: 'Edit your edge application', header: true, type: 'learn', key: 'editEdgeApp', children: [
