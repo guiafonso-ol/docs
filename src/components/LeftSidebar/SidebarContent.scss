@@ -6,7 +6,7 @@
 
 	.list-border-bottom {
 		border-bottom: 1px solid var(--theme-bg-offset);
-		padding-bottom: 1rem !important;
+		padding-bottom: 0.6rem !important;
 	}
 
 	.list-border-left {
@@ -28,7 +28,7 @@
 			color: var(--color-orange);
 			text-transform: uppercase;
 			letter-spacing: .1rem;
-			padding: 0.7rem 0.5rem 0.3rem;
+			padding: 0.3rem 0.5rem 0.3rem;
 			line-height: 40px;
 		}
 	}
