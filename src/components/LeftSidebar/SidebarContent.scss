@@ -6,6 +6,7 @@
 
 	.list-border-bottom {
 		border-bottom: 1px solid var(--theme-bg-offset);
+		padding-bottom: 0.6rem !important;
 	}
 
 	.list-border-left {
@@ -15,7 +16,7 @@
 
 
 	.nav-group {
-		padding: .5rem 0;
+		padding: .3rem 0;
 
 		a {
 			display: flex;
@@ -27,7 +28,8 @@
 			color: var(--color-orange);
 			text-transform: uppercase;
 			letter-spacing: .1rem;
-			padding: 1rem 0.5rem;
+			padding: 0.3rem 0.5rem 0.3rem;
+			line-height: 40px;
 		}
 	}
 
