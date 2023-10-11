@@ -81,7 +81,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 							</details>
 						)}
 					</li>
-					{addBorder ? <li><hr class="menu-list-border-bottom"/></li> : null}
+					{addBorder ? <li class="menu-list-divider"><hr /></li> : null}
 				</Fragment>
 			);
 		}
