@@ -27,9 +27,9 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 			return (
 				<Fragment>
 					{hasLabel ? (
-							<span class="overline-menu">
+							<li class="overline-menu">
 								<UIString key={hasLabel} />
-							</span>
+							</li>
 						) : null}
 					<li
 						class:list={[
@@ -81,7 +81,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 							</details>
 						)}
 					</li>
-					{addBorder ? <hr class="menu-list-border-bottom"/> : null}
+					{addBorder ? <li><hr class="menu-list-border-bottom"/></li> : null}
 				</Fragment>
 			);
 		}
