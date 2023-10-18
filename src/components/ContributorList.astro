@@ -15,7 +15,7 @@ const printError = (e: Error) =>
 async function getContributors(repo: string, page = 1): Promise<{ login: string; id: number }[]> {
 	try {
 		const pageSize = 100;
-		const url = `https://api.github.com/repos/aziontech/docs/contributors?per_page=${3}&page=${1}`;
+		const url = `https://api.github.com/repos/aziontech/docs/contributors?per_page=${5}&page=${1}`;
 
 		const token = import.meta.env.PUBLIC_GITHUB_TOKEN;
 
