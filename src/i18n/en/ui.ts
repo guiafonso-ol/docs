@@ -137,8 +137,10 @@ export default {
 	'menu.getStarted': 'Get started',
 	'menu.account': 'Manage your account',
 	'menu.addResources': 'Additional resources',
-	'menu.domains': 'Domains',
-	'menu.reference': 'Reference'
-
-
+	'menu.domains': 'Work with Domains',
+	'menu.reference': 'Reference',
+	// top bar message
+	'topbar.message': 'Azion earns Frost & Sullivan’s 2023 North American New Product Innovation Award in the edge serverless industry.',
+	'topbar.link': 'https://www.azion.com/en/blog/azion-frost-sullivan-award/',
+	'topbar.cta': 'Check out!',
 };
