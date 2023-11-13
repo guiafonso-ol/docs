@@ -15,14 +15,19 @@
 	
 	/// START HERE :::: DO NOT REMOVE the strings above, it's a work around for header on mobile /// 
 
-	{ text: 'Overview', header: true, anchor: true, type: 'learn', key: 'overview', slug: '/documentation/products/edge-application/edge-functions/runtime/overview' },
+	{ text: 'Overview', header: true, anchor: true, type: 'learn', key: 'overview', slug: '/documentation/products/edge-application/edge-functions/runtime/overview',hasLabel: 'menu.runtime' },
 	{ text: 'API Reference', header: true, type: 'learn', key: 'apiReference', children: [
 		{ text: 'Environment Variables', slug: '/documentation/products/edge-application/edge-functions/runtime/api-reference/environment-variables', key: 'runtime/variables' },
 		{ text: 'Web APIs', slug: '/documentation/products/edge-application/edge-functions/runtime-apis/javascript', key: 'runtime/web-standards' },
 		{ text: 'Metadata API', slug: '/documentation/products/edge-application/edge-functions/runtime/api-reference/metadata', key: 'runtime/metadata' },
 		{ text: 'Network List interface', slug: '/documentation/products/edge-application/edge-functions/runtime/api-reference/network-list', key: 'runtime/network-list' },
 	]},
+	{ text: 'Node.js compatibility', header: true, type: 'learn', key: 'apiReference', children: [
+		{ text: 'Runtime', slug: '/documentation/products/azion-edge-runtime/compatibility/node', key: 'runtime/node' },
+		{ text: 'Build time WIP', slug: '/documentation/products/vulcan/compatibility/node', key: 'runtime/vulcan/node' },
+	]},
 
+	{ text: 'Frameworks compatibility', header: true, anchor: true, type: 'learn', key: 'runtime/frameworks', slug: '/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility' },
 
     { text: 'JavaScript Examples', header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/javascript-examples', key: 'runtime/jsExamples' },
 	{ text: 'Debugging', header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/debugging', key: 'runtime/debugging' },
