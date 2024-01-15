@@ -19,6 +19,6 @@
 	{ text: 'API GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentacao/produtos/graphql-api/', key: 'devtools/graphQL' },
 	{ text: 'Edge Runtime',header: true, anchor: true, type: 'learn', slug: '/documentacao/produtos/edge-application/edge-functions/runtime/visao-geral/', key: 'devtools/runtime' },
 	{ text: 'SDK',header: true, anchor: true, type: 'learn', slug: '/documentacao/devtools/sdk/go/', key: 'devtools/sdk' },
-	{ text: 'Terraform', header: true, anchor: true, type: 'learn', slug: '/documentacao/produtos/terraform-provider/', key: 'devtools/terraform' },
+	{ text: 'CDS', header: true, anchor: true, type: 'learn', key: 'devtools/cds', slug: '/documentacao/devtools/cds/' }
 
 ] as const;
