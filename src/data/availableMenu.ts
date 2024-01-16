@@ -6,5 +6,7 @@ export const availableMenus = [
 	{ name: 'devtoolsMenu', langs: ['en', 'pt-br'] },
 	{ name: 'buildMenu', langs: ['en', 'pt-br'] },
 	{ name: 'cliMenuAlpha', langs: ['en', 'pt-br'] },
+	{ name: 'deployMenu', langs: ['en', 'pt-br'] },
+
 
 ]

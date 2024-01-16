@@ -1,0 +1,92 @@
+---
+title: Deploy a service
+description: aaa
+meta_tags: deploy, orchestrator
+namespace: docs_deploy_overview
+menu_namespace: deployMenu
+og_image: ''
+permalink: /documentation/products/deploy/deploy-a-service/
+---
+
+import Button from '~/components/Button.astro'
+
+**Edge Orchestrator** allows you to manage and control edge resources in real time, including the deployment, update, and management of various services and resources.
+
+Azion provides two ways to manage edge nodes, edge services, resources, and credentials: 
+
+- [Azion API](https://api.azion.com)
+- [Real-Time Manager (RTM)](/en/documentation/products/guides/how-to-access-rtm/)
+
+<Button href="/en/documentation/products/guides/deploy/install-orchestrator-agent/" text="go to Install Edge Orchestrator Agent guide" variant="secondary"></Button>
+
+---
+
+## Step 1: Create an edge service
+
+To create an edge service, you need to give it an easy-to-remember name.
+
+<Button href="/en/documentation/products/guides/deploy/create-edge-service/" text="go to create an edge service guide" variant="secondary"></Button>
+
+---
+
+## Step 2: Create a resource 
+
+To be able to orchestrate services on your device, you need to configure all the resources needed to install, uninstall, and reload your services.
+
+To create a resource, you need to: 
+
+- Give the resource an easy-to-remember name.
+- Choose the `content-type` of the resource. Example: `text` and `shell-script`.
+- Add the content of the resource.
+
+<Button href="/en/documentation/products/guides/deploy/provision-files/" text="go to provision files guide" variant="secondary"></Button>
+
+---
+
+## Step 3: Generate a credential 
+
+To be able to manage edge nodes, you must generate the credentials used by the Azion Orchestrator Agent.
+
+To do so: 
+
+- Choose a description.
+- Add an easy-to-remember name.
+- Set the credential as active.
+
+<Button href="/en/documentation/products/guides/deploy/create-credentials/" text="go to create a credential guide" variant="secondary"></Button>
+<br/>
+<Button href="/en/documentation/products/deploy/credentials/" text="go to credentials reference documentation" variant="secondary"></Button>
+
+---
+
+## Step 4: Install Edge Orchestrator Agent 
+
+With the credentials created:
+
+- Download and install the Edge Orchestrator agent with the recently created credentials.
+
+<Button href="/en/documentation/products/guides/deploy/install-orchestrator-agent/" text="go to Install Edge Orchestrator Agent guide" variant="secondary"></Button>
+
+---
+
+## Step 5: Authorize an edge node
+
+With the Edge Orchestrator Agent installed on the device:
+
+- Authorize the edge node.
+
+<Button href="/en/documentation/products/guides/deploy/authorize-node/" text="go to authorize edge node guide" variant="secondary"></Button>
+<br/>
+<Button href="/en/documentation/products/deploy/edge-orchestrator/edge-node/" text="go to edge node reference documentation" variant="secondary"></Button>
+
+---
+
+## Step 6: Link an edge service to an edge node
+
+Now, with the edge node created and authorized, you must link it with an edge service to be deployed onto the edge node.
+
+- Create a relation between edge service and edge node.
+
+<Button href="/en/documentation/products/guides/deploy/bind-service-node/" text="go to Bind an edge service to an edge node guide" variant="secondary"></Button>
+
+Once this relation is in place, when an update is triggered on the edge services, it'll be deployed to all nodes related to this service in particular.
