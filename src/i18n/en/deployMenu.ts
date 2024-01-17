@@ -18,6 +18,7 @@ export default [
 
     {
         text: 'Configure an edge node', header: true, type: 'learn', key: 'configEdgeNode', children: [
+            { text: 'Generate a credential', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/generate-credentials/', key: 'generateCredentials' },
             { text: 'Install Azion Edge Orchestrator agent', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/install-orchestrator-agent/', key: 'installAgent' },
             { text: 'Authorize an edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/authorize-an-edge-node/', key: 'authNode' },
             { text: 'Watch logs', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/guides/deploy/authorize-an-edge-node/', key: 'watchLogs' },
