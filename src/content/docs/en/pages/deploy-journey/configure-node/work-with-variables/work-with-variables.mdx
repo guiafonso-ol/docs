@@ -1,5 +1,5 @@
 ---
-title: Work with variables
+title: How to work with variables
 description: aaa
 meta_tags: deploy, orchestrator
 namespace: docs_deploy_work_with_variables
@@ -7,7 +7,7 @@ menu_namespace: deployMenu
 permalink: /documentation/products/guides/deploy/work-with-variables/
 ---
 
-During the deployment process on Edge Orchestrator, we have the possibility to work with variables. A variable can be set on an [edge service](#edge-services-variables) and on an [edge node](#edge-node).
+During the deployment process on **Edge Orchestrator**, you can work with variables. A variable can be set on an [edge service](#edge-services-variables) and an [edge node](#edge-node).
 
 :::note
 The priority is always the edge node variable. So, if you have a variable configured on an edge service and the same variable configured on an edge node, the one on the node will override the one configured on the edge service.
@@ -27,13 +27,13 @@ You can create edge node and edge services variables using:
 1. Go to [Real-Time Manager (RTM)](/en/documentation/products/guides/how-to-access-rtm/) > **Edge Libraries** > **Edge Services**.
 2. Select the edge service to which you want to add a variable.
 3. Go to the **Environment** tab.
-5. Add the following variable:
+4. Add the following variable:
 
 ```bash 
 name=azion
 ```
 
-6. Click the **Save** button.
+5. Click the **Save** button.
 
 Now, you've created a variable related to a specific service. You need to access this variable through a resource.
 
@@ -77,7 +77,7 @@ curl --location --request PATCH 'https://api.azionapi.net/edge_services/:id' \
 }'
 ```
 
-Now, you've created a variable, related to a specific service. You need to access this variable through a resource.
+Now, you've created a variable related to a specific service. You need to access this variable through a resource.
 
 3. Create a resource that will use the variable. Run the following `POST` request in your terminal, replacing `[TOKEN VALUE]` with your [personal token](/en/documentation/products/guides/personal-tokens/), `:id` with the ID of the edge service and informing the following parameters in the request body:
 
@@ -104,7 +104,7 @@ curl --location 'https://api.azionapi.net/edge_services/:id/resources' \
 
 ---
 
-## Edge Node 
+## Edge Node variables
 
 ### Via RTM 
 
@@ -120,7 +120,7 @@ name=azion
 
 6. Click the **Save** button.
 
-Now, you've created a variable, related to a specific node. You need to access this variable through a resource.
+Now, you've created a variable related to a specific node. You need to access this variable through a resource.
 
 1. Navigate to the **Resources** tab. 
 2. Select the resource where you wish to use the variable.
