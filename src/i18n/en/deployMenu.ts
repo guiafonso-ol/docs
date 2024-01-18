@@ -21,7 +21,7 @@ export default [
             { text: 'Generate a credential', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/generate-credentials/', key: 'generateCredentials' },
             { text: 'Install Azion Edge Orchestrator agent', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/install-orchestrator-agent/', key: 'installAgent' },
             { text: 'Authorize an edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/authorize-an-edge-node/', key: 'authNode' },
-            { text: 'Watch logs', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/guides/deploy/authorize-an-edge-node/', key: 'watchLogs' },
+            { text: 'Watch logs', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/watch-logs/', key: 'watchLogs' },
             { text: 'Create an edge service', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/create-edge-service/', key: 'createService' },
             { text: 'Bind an edge service', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/bind-service-node/', key: 'bindService' },
             { text: 'Provision files', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/provision-files/', key: 'provisionFiles' },
@@ -34,7 +34,7 @@ export default [
         text: 'Advanced configuration', header: true, type: 'learn', key: 'configEdgeNode', children: [
             { text: 'Explore Azion Edge Orchestrator commands', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands' },
             { text: 'Execute templates', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'executeTempleates' },
-            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'runScripts' },
+            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/run-scripts/', key: 'runScripts' },
             { text: 'Uninstall edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/set-error-pages/', key: 'uninstallNode' },
         ]
     },
