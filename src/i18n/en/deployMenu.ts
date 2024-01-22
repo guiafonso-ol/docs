@@ -31,12 +31,16 @@ export default [
     },
 
     {
-        text: 'Advanced configuration', header: true, type: 'learn', key: 'configEdgeNode', children: [
-            { text: 'Explore Azion Edge Orchestrator commands', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands' },
-            { text: 'Execute templates', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'executeTempleates' },
+        text: 'Advanced configurations', header: true, type: 'learn', key: 'configEdgeNode', children: [
+            { text: 'Explore Usage', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands' },
             { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'runScripts' },
             { text: 'Uninstall edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/set-error-pages/', key: 'uninstallNode' },
         ]
     },
+
+    
+            { text: 'Azion API', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands', hasLabel:'menu.secureAutomate' },
+            { text: 'Zero-touch provisioning', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'runScripts' },
+    
 
 ] as const;
