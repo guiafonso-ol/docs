@@ -31,12 +31,16 @@ export default [
     },
 
     {
-        text: 'Advanced configuration', header: true, type: 'learn', key: 'configEdgeNode', children: [
-            { text: 'Explore Azion Edge Orchestrator commands', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands' },
-            { text: 'Execute templates', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'executeTempleates' },
-            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/run-scripts/', key: 'runScripts' },
-            { text: 'Uninstall edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/set-error-pages/', key: 'uninstallNode' },
+        text: 'Advanced configurations', header: true, type: 'learn', key: 'configEdgeNode', children: [
+            { text: 'Explore Usage', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/advanced/explore-usage/', key: 'exploreUsage' },
+            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/advanced/run-scripts/', key: 'runScripts' },
+            { text: 'Uninstall agent', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/advanced/uninstall-agent/', key: 'uninstallNode' },
         ]
     },
+
+    
+            { text: 'Azion API', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/automate/api/', key: 'deployAutomateAPI', hasLabel:'menu.secureAutomate' },
+            { text: 'Zero-touch provisioning', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/automate/zero-touch-provisioning/', key: 'zeroTouchProvisioning' },
+    
 
 ] as const;
