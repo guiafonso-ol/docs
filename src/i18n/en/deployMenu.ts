@@ -32,15 +32,15 @@ export default [
 
     {
         text: 'Advanced configurations', header: true, type: 'learn', key: 'configEdgeNode', children: [
-            { text: 'Explore Usage', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands' },
-            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'runScripts' },
-            { text: 'Uninstall edge node', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/set-error-pages/', key: 'uninstallNode' },
+            { text: 'Explore Usage', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/advanced/explore-usage/', key: 'exploreUsage' },
+            { text: 'Run scripts', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/advanced/run-scripts/', key: 'runScripts' },
+            { text: 'Uninstall agent', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/deploy/advanced/uninstall-agent/', key: 'uninstallNode' },
         ]
     },
 
     
-            { text: 'Azion API', header: true, anchor: true, type: 'learn', slug: '', key: 'exploreCommands', hasLabel:'menu.secureAutomate' },
-            { text: 'Zero-touch provisioning', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/create-device-groups/', key: 'runScripts' },
+            { text: 'Azion API', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/automate/api/', key: 'deployAutomateAPI', hasLabel:'menu.secureAutomate' },
+            { text: 'Zero-touch provisioning', header: true, anchor: true, type: 'learn', slug: '/documentation/products/deploy/automate/zero-touch-provisioning/', key: 'zeroTouchProvisioning' },
     
 
 ] as const;
