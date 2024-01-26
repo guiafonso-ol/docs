@@ -157,6 +157,7 @@ export default {
 	'menu.observeTroubleshoot': 'Troubleshoot',
 	'menu.realTimeMetrics': 'Real-Time Metrics',
 	'menu.deploy': 'Deploy',
+	'menu.learn': 'Learn',
 
 	// top bar message
 	'topbar.message': 'Azion earns Frost & Sullivan’s 2023 North American New Product Innovation Award in the edge serverless industry.',
