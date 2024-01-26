@@ -58,6 +58,28 @@ export default [
 			{ text: 'WAF in Learning Mode', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
 			{ text: 'WAF in Block Mode', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
 			{ text: 'Network Lists ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+			{ text: 'Rate limit ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+			{ text: 'Rules Engine ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+			{ text: 'WAF Rules sets', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+			{ text: 'Advanced Tunning', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+	]
+},
+
+{
+	text: 'Deploy', header: true, type: 'learn', key: 'editEdgeApp', children: [
+			{ text: 'Creating an Edge Service', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
+			{ text: 'Azion Edge Node', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+	]
+},
+
+{
+	text: 'Observe', header: true, type: 'learn', key: 'editEdgeApp', children: [
+			{ text: 'How to Use Data Streaming', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
+			{ text: 'Associate domains on Data Streaming', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'Amazon S3 to receive data from Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'Firehose to receive data from Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'First steps with GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'Metadata with GraphQL via Azion API', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
 	]
 },
 
