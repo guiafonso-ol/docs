@@ -11,7 +11,7 @@ export default headerMenuDict({
 	},
 	{
 		title: "Dev Tools",
-		href: "/en/documentation/products/dev-tools/",
+		href: "/en/documentation/devtools/"
 		// dropdown: [
 		//     {
 		//         title: "CLI",
@@ -37,6 +37,10 @@ export default headerMenuDict({
 		//     {
 		//         title: "Terraform",
 		//         href: "documentation_terraform_provider"
+		//     },
+		//		{
+		//         title: "Content Design System",
+		//         href: "documentation_console_content"
 		//     }
 		// ]
 	}

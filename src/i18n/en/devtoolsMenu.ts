@@ -20,6 +20,7 @@
 	{ text: 'Edge Runtime',header: true, anchor: true, type: 'learn', slug: '/documentation/products/edge-application/edge-functions/runtime/overview/', key: 'devtools/runtime' },
 	{ text: 'SDK',header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/sdk/go/', key: 'devtools/sdk' },
 	{ text: 'Terraform', header: true, anchor: true, type: 'learn', slug: '/documentation/products/terraform-provider/', key: 'devtools/terraform' },
-	{ text: 'CDS', header: true, anchor: true, type: 'learn', key: 'devtools/cds', slug: '/documentation/devtools/cds/' }
+	{ text: 'CDS', header: true, anchor: true, type: 'learn', key: 'devtools/cds', slug: '/documentation/devtools/cds/' },
+	{ text: 'Content Design System', header: true, anchor: true, type: 'learn', key: 'devtools/console', slug: '/documentation/products/devtools/console-kit-documentation/overview/' }
 
 ] as const;
