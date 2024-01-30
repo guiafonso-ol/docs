@@ -1,0 +1,101 @@
+---
+title: Search bar
+description: aaaaaa
+meta_tags: aaaaaaaa
+namespace: docs_devtools_console_components_search
+permalink: /documentation/products/devtools/console-kit-documentation/components/search-bar/
+menu_namespace: docConsoleMenu
+---
+import Button from '~/components/Button.astro'
+
+The **Search Bar** is an input element that lets users enter a brief text on a single line to execute a search on the current page.
+
+---
+
+## Usage
+
+The **Search Bar** appears in pages where users can filter and/or search an instance or any other element. Example: tables in products pages, Marketplace homepage.
+
+---
+
+## Behavior
+
+The **Search Bar** is composed by a bar, a magnifying glass tilted left icon, and a standard placeholder text.
+
+When users click on the bar, the cursor appears. When users type a text, the placeholder disappears, and the search starts, exhibiting on screen the matches.
+
+Users are able to enter any type of text, including letters, numbers, and symbols. 
+
+---
+
+## Design
+
+![Search bar component](/assets/docs/images/uploads/how-azion-works-light.png)
+
+### Code
+
+```bash title="search-bar.vue"
+<template>
+    <div class="card flex justify-content-center">
+        <Password v-model="value">
+            <template #header>
+                <h6>Pick a password</h6>
+            </template>
+            <template #footer>
+                <Divider />
+                <p class="mt-2">Suggestions</p>
+                <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                    <li>At least one lowercase</li>
+                    <li>At least one uppercase</li>
+                    <li>At least one numeric</li>
+                    <li>Minimum 8 characters</li>
+                </ul>
+            </template>
+        </Password>
+    </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const value = ref(null);
+</script>
+```
+
+----
+
+## Content
+
+By default, the search on Azion is executed to find an instance or element by name.
+
+A standard text was defined to be within this element: **Search**.
+
+### Best practices
+
+#### Capitalization
+
+- Use sentence case.
+
+| Do | Don't  |
+|---|---|
+| *Search*  | *Search an application here* |
+
+#### Exceptions
+
+In case of search engine working with another behavior, the recommendation is following this structure: Search by [behavior]
+
+| Do | Don't  |
+|---|---|
+| *Search by date*  | *Searching your timestamp* |
+
+---
+
+## Related components
+
+<Button href="#" text="Tables" variant="secondary"></Button><Button href="#" text="Labels" variant="secondary"></Button>
+
+---
+
+import ContributorList from '~/components/ContributorList.astro'
+
+**Contributors** <ContributorList>Contributor</ContributorList>

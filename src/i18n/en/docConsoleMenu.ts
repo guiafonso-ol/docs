@@ -56,16 +56,15 @@ export default [
 
         /// IN-PRODUCT CONTENT ///
 
-        { text: 'Azion voice', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/azion-plugin-grafana-custom-dash/', key: 'azionVoice', hasLabel: 'menu.generalGuidelines' },
-
         {
             text: 'General guidelines', header: true, type: 'learn', key: 'generalGuidelines', children: [
-                { text: 'Product content', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/observe/analyze-metrics/', key: 'inProductRecommendations' },
-                { text: 'Language', header: true, anchor: true, type: 'learn', slug: '/documentation/products/guides/observe/add-filters-metrics/', key: 'language' },
-                { text: 'Style rules', header: true, anchor: true, type: 'learn', slug: '/documentation/devtools/graphql-api/overview/', key: 'styleRules' },
-                { text: 'Punctuation and typography', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/graphql-playground/', key: 'punctuationAndTypography' },
-                { text: 'Help content', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/graphql-playground/', key: 'helpContent' },
-                { text: 'Words list', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/graphql-playground/', key: 'wordsList' },
+                { text: 'Overview', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/overview/', key: 'contentOverview' },
+                { text: 'Voice and tone', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/voice-and-tone/', key: 'language' },
+                { text: 'Style rules', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/style-rules/', key: 'styleRules' },
+                { text: 'Numbers', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/numbers/', key: 'styleRules' },
+                { text: 'Punctuation and typography', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/punctuation-and-typography/', key: 'punctuationAndTypography' },
+                { text: 'Help content', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/help-content/', key: 'helpContent' },
+                { text: 'Words list', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/words-list/', key: 'wordsList' },
 
             ]
         },
