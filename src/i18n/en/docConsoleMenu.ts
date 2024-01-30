@@ -57,7 +57,7 @@ export default [
         /// IN-PRODUCT CONTENT ///
 
         {
-            text: 'General guidelines', header: true, type: 'learn', key: 'generalGuidelines', children: [
+            text: 'General guidelines', header: true, type: 'learn', key: 'generalGuidelines', hasLabel: 'menu.generalGuidelines', children: [
                 { text: 'Overview', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/overview/', key: 'contentOverview' },
                 { text: 'Voice and tone', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/voice-and-tone/', key: 'language' },
                 { text: 'Style rules', header: true, anchor: true, type: 'learn', slug: '/documentation/products/devtools/console-kit-documentation/content/style-rules/', key: 'styleRules' },
