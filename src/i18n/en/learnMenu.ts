@@ -66,7 +66,7 @@ export default [
 {
 	text: 'Deploy', header: true, type: 'learn', key: 'editEdgeApp', children: [
 			{ text: 'Creating an Edge Service', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/service', key: 'edgeService' },
-			{ text: 'Azion Edgesss Node', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/node', key: 'edgeNode' },
+			{ text: 'Azion Edges Node', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/node', key: 'edgeNode' },
 	]
 },
 
