@@ -17,69 +17,67 @@ export default [
 	
 
 	{
-			text: 'Edge Foundations I', header: true, type: 'learn', key: 'editEdgeApp', children: [
-					{ text: 'Welcome to Edge Computing', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-					{ text: 'From Past to Present', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-					{ text: 'Edge ,Cloud , and Legacy Architectures', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'errorPages' },
-					{ text: 'Key Concepts Simplified', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-					{ text: 'Guide to Its Layers', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'cacheSettings' },
-					{ text: 'Conclusion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'rules' },
+			text: 'Introduction to Edge Computing', header: true, type: 'learn', slug: '/documentation/learn/intro', key: 'intro', children: [
+					{ text: 'Welcome', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/welcome', key: 'welcome' },
+					{ text: 'Edge Timeline: Past to Present', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/timeline', key: 'timeline' },
+					{ text: 'Edge, Cloud, and Legacy Architectures', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/comparingEdgeCloud', key: 'comparingEdgeCloud' },
+					{ text: 'Edge Computing Key Concepts', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/concepts', key: 'concepts' },
+					{ text: 'Edge Computing Anatomy', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/anatomy', key: 'anatomy' },
+					{ text: 'A Comprehensive Use Case Guide', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/usecase', key: 'useCase' },
+					{ text: 'Conclusion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/conclusion', key: 'conclusion' },
 			]
 	},
 
 	{
-		text: 'Getting Started', header: true, type: 'learn', key: 'editEdgeApp', children: [
-				{ text: 'First steps', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-				{ text: 'Install and Run Azion CLI', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-				{ text: 'Creating and revoking Personal Tokens', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'errorPages' },
-				{ text: 'Looking up DNS', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-				{ text: 'Opening a support ticket ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'cacheSettings' },
+		text: 'Starting Up', header: true, type: 'learn', key: 'editEdgeApp', children: [
+				{ text: 'What is Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/azion', key: 'azion' },
+				{ text: 'Get to Know the Platform', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/platform', key: 'platform' },
+				{ text: 'Install and Run Azion CLI', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/cli', key: 'cli' },
 		]
 },
 
 {
-	text: 'Edge Applications', header: true, type: 'learn', key: 'editEdgeApp', children: [
-			{ text: 'Create an edge function', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-			{ text: 'Deploy Next.js Apps on the Edge', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'Customizing an error response page', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'errorPages' },
-			{ text: 'Setting Up and Deleting Domains', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+	text: 'Build Edge Applications', header: true, type: 'learn', key: 'editEdgeApp', children: [
+			{ text: 'Create an edge function', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/function', key: 'edgeFunction' },
+			{ text: 'Edge-Deploy Next.js Apps with Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/nextjs', key: 'deployNextjs' },
+			{ text: 'Customizing an error response page', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/error', key: 'errorPages' },
+			{ text: 'Setting Up and Deleting Domains', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/domains', key: 'domains' },
 	]
 },
 
 {
-	text: 'Secure - WAF Foundations', header: true, type: 'learn', key: 'editEdgeApp', children: [
-			{ text: 'Introduction to WAF', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-			{ text: 'Observing WAF in real time', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'Custom Allowed Rule', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'errorPages' },
-			{ text: 'SQL Injection attack', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'XSS attack', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'RFI attack', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'Directory Traversal attack', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'WAF in Learning Mode', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'WAF in Block Mode', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'Network Lists ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'Rate limit ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'Rules Engine ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'WAF Rules sets', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
-			{ text: 'Advanced Tunning', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'origins' },
+	text: 'Secure', header: true, type: 'learn', key: 'editEdgeApp', children: [
+			{ text: 'WAF Introduction', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/waf', key: 'introduction' },
+			{ text: 'Real Time Metrics and Events', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/metrics', key: 'metrics' },
+			{ text: 'Custom Allowed Rule', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/custom', key: 'custom' },
+			{ text: 'SQL Injection', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/sql', key: 'sql' },
+			{ text: 'XSS Threats', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/xss', key: 'xss' },
+			{ text: 'RFI Threats', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/rfi', key: 'rfi' },
+			{ text: 'Directory Traversal', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/directory', key: 'directory' },
+			{ text: 'WAF in Learning Mode ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/learning', key: 'learningMode' },
+			{ text: 'WAF in Block Mode ', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/block', key: 'blockMode' },
+			{ text: 'Rules with Network Lists', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/lists', key: 'lists' },
+			{ text: 'WAF Rate Limits', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/limits', key: 'limits' },
+			{ text: 'WAF Usage: Edge Firewall Rules', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/rules', key: 'rules' },
+			{ text: 'Advanced Tunning', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/tuning', key: 'tuninng' },
 	]
 },
 
 {
 	text: 'Deploy', header: true, type: 'learn', key: 'editEdgeApp', children: [
-			{ text: 'Creating an Edge Service', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-			{ text: 'Azion Edge Node', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'Creating an Edge Service', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/service', key: 'edgeService' },
+			{ text: 'Azion Edge Node', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/node', key: 'edgeNode' },
 	]
 },
 
 {
 	text: 'Observe', header: true, type: 'learn', key: 'editEdgeApp', children: [
-			{ text: 'How to Use Data Streaming', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'mainSettings' },
-			{ text: 'Associate domains on Data Streaming', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'Amazon S3 to receive data from Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'Firehose to receive data from Azion', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'First steps with GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
-			{ text: 'Metadata with GraphQL via Azion API', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/', key: 'deviceGroups' },
+			{ text: 'Data Streaming', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/datastreaming', key: 'dataStreaming' },
+			{ text: 'Usage and Domain Association', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/domainassociation', key: 'domainAssociation' },
+			{ text: 'Amazon S3', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/s3', key: 's3' },
+			{ text: 'Amazon Kinesis Data Firehose', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/firehose', key: 'firehose' },
+			{ text: 'First steps with GraphQL', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/graphql', key: 'graphQl' },
+			{ text: 'Metadata: GraphQL with Azion API', header: true, anchor: true, type: 'learn', slug: '/documentation/learn/metadata', key: 'metadata' },
 	]
 },
 
