@@ -140,6 +140,8 @@ export default {
 	'menu.domains': 'Work with Domains',
 	'menu.reference': 'Reference',
 	'menu.deploy': 'Deploy',
+	'menu.learn': 'Learn',
+
 
 	'menu.secureAutomate': 'Automate with Azion',
 
