@@ -1,0 +1,116 @@
+---
+title: Dialogs
+description: aaaaaa
+meta_tags: aaaaaaaa
+namespace: docs_devtools_console_components_dialogs
+permalink: /documentation/products/console-kit/components/dialogs/
+menu_namespace: docConsoleMenu
+---
+
+
+import Button from '~/components/Button.astro'
+
+**Dialogs** refer to fnjnfjnfnlaenl jncjsev fjcbes jkcv vsebvrje fjenvjk djkv sdv sknvklqnvjlqnslncl cvcelj vle vjsbvjke rbv.
+
+---
+
+## Usage
+
+Dialogs serve to request to the user a confirmation or submission.
+
+---
+
+## Behavior
+
+Dialogs exhibit as a modal, overlapping and obscuring the current content and appearing in the middle of the page to focus the user's attention.
+
+---
+
+## Variations
+
+### Critical Destructive Dialog
+
+The Critical Destructive Dialog is used to confirm the removal of a critical entity whose removal will impact the functionality of other entities or any other client's setup.
+It overlaps and obscures the current content, appearing in the middle of the page to focus the user's attention.
+It disables all functionalities when appears and remains on screen until the required action has been taken.
+
+This variation contains:
+- **Header**: it provides the context of the required action.
+- **Warning message**: being a critical action, it alerts users the consequences of taking that action.
+- **Description**: it complements the header with additional information about the critical action.
+- **Input**: it's a required field so users type the name of the entity to confirm its removal.
+- **Buttons**: it includes a destruction button to confirm the action, that appears red-colored as the primary button, and a secondary button to cancel the action.
+- **Exit button**: it's represented by an X in the upper-right corner, enabling the user to close the dialog without taking any further action.
+
+Within Azion's platform, current critical entities are:
+
+- Domains
+- Edge applications
+- Edge firewalls
+- Edge functions
+- Intelligent DNS
+- Edge services
+- Digital certificates
+- Network lists
+- WAF rules
+
+#### Design 
+
+![Search bar component](/assets/docs/images/uploads/how-azion-works-light.png)
+
+##### Code
+
+```bash title="search-bar.vue"
+<template>
+    <div class="card flex justify-content-center">
+        <Password v-model="value">
+            <template #header>
+                <h6>Pick a password</h6>
+            </template>
+            <template #footer>
+                <Divider />
+                <p class="mt-2">Suggestions</p>
+                <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
+                    <li>At least one lowercase</li>
+                    <li>At least one uppercase</li>
+                    <li>At least one numeric</li>
+                    <li>Minimum 8 characters</li>
+                </ul>
+            </template>
+        </Password>
+    </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+
+const value = ref(null);
+</script>
+```
+
+#### Content
+
+While writing a Critical Destructive Dialog, follow these general guidelines for each element:
+
+Header: keep it concise and clear, using the structure [action] + [name of instance], and short, up to 1 line. Use title case, if necessary.
+Delete [nome do que será deletado]
+Warning message: remarking it's an irreversible action.
+Once confirmed, this action can't be reversed.
+Description: clarify the consequence of the action, including the instances that will be affected, up to 2 lines.
+This [nome do que será deletado] will be deleted along with any associated settings or instances. Check Help Center for more details.
+Input: request confirmation.
+Type “delete” to confirm:
+Buttons: the primary button should be the verb reflecting the action, same as the header. The secondary button is Cancel.
+[Cancel] [Delete]
+
+Use the content in the Design section as a guide to this variation.
+
+Best practices
+The Critical Destructive Dialog should be focused in completing a single task. Avoid mixing different topics. 
+Avoid repeating information across the elements. Each element has a function. 
+Be objective and clear.
+Avoid apologies, extra alarm, or ambiguous content.
+
+
+
+
