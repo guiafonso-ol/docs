@@ -59,15 +59,15 @@ Objetos, ou arquivos, podem ser enviados, modificados, baixados e removidos dos 
 
 ### Object key
 
-Uma object key é uma string de caracteres que compõe identificador de objetos armazenados em buckets do **Edge Storage**. Por meio das ferramentas disponíveis, os usuários podem recuperar um arquivo armazenado em um bucket usando sua chave de objeto.
+A object key é uma string de caracteres que serve como o identificador de objetos armazenados em buckets do **Edge Storage**. Por meio das ferramentas disponíveis, você pode entregar, modificar, recuperar e deletar um arquivo armazenado em um bucket usando a object key.
 
-Não é obrigatório que a object key corresponda ao caminho do arquivo original ou nome do armazenamento local de onde ele foi retirado, nem que contenha a extensão original do arquivo. No entanto, ao fazer o upload de um arquivo local para um bucket, é recomendado que o nome do arquivo corresponda à object key para que ele se encaixe às convenções do armazenamento local. Por exemplo, para o arquivo local `pasta/arquivo.png`, a object key deve ser a mesma.
+A object key não precisa corresponder exatamente ao nome original do arquivo no armazenamento local, nem mesmo incluir a extensão do arquivo original ou o caminho. No entanto, ao fazer o upload de um arquivo local para um bucket, é recomendado atribuir à object key o nome do arquivo para corresponder às convenções de armazenamento local. Por exemplo, para o arquivo local `folder/file.png`, a object key deve ser a mesma.
 
 A object key não pode ser alterada. Fazer o upload de um objeto diferente ou modificar o conteúdo de um objeto usando uma chave existente substitui o objeto. Uma vez que um objeto é substituído, versões anteriores não podem ser recuperadas.
 
 ### Prefix
 
-Um prefixo é uma combinação de caminhos que simulam uma hierarquia de pastas. Como os buckets não podem ser organizados em pastas, você pode usar a barra (`/`) ao criar chaves para categorizar objetos do seu bucket em um prefixo.
+Um prefix, ou prefixo, é uma combinação de caminhos que simulam uma hierarquia de pastas. Como os buckets não podem ser organizados em pastas, você pode usar a barra (`/`) ao criar chaves para categorizar objetos do seu bucket em um prefix.
 
 Por exemplo, a lista de keys abaixo mostra a hierarquia simulada de uma aplicação armazenada em um bucket com prefixes:
 
@@ -129,7 +129,7 @@ Faz upload de um objeto em um bucket.
 
 Utilize o comando cURL com a opção `--data-binary` para enviar dados binários brutos, como imagens ou arquivos complexos sem passar por URL encoding.
 
-Você deve especificar o MIME type do objeto sendo enviado no corpo da requisição com o cabeçalho `Content-Type`. Por exemplo, objetos com extensão `.txt` devem conter o cabeçalho `Content-Type: text/plain`. Como alternativa, utilize o MIME type `application/octet-stream` para indicar que os dados são um fluxo binário e o servidor deve tratá-los como dados binários brutos.
+Você deve especificar o MIME type do objeto sendo enviado no corpo da requisição com o cabeçalho `Content-Type`. Por exemplo, objetos com extensão `.txt` devem conter o cabeçalho `Content-Type: text/plain`. Utilize o MIME type `application/octet-stream` para indicar que os dados são um fluxo binário e o servidor deve tratá-los como dados binários brutos.
 
 Ao enviar um novo objeto com uma object key já existente no bucket, o objeto anterior será substituído.
 
