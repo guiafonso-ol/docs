@@ -156,7 +156,7 @@ Content hosted through **Object Storage** can also be stored in cache and be del
 
 When content isn't found in Azion's cache, meaning there was a *MISS* in **Edge Cache**, Azion searches and fetches the content from the origin to deliver it to the user. For clients using **Tiered Cache**, there can be a *MISS* in both the Edge Cache and the Tiered Cache layer, and the content is searched on the origin before being delivered by the edge.
 
-For clients using **Object Storage**, Azion can also search and fetch the content from the origin if there's a *MISS* in **Edge Cache**. In this case, the origin is the object storage that was configured in the product.
+For clients using **Edge Storage**, Azion can also search and fetch the content from the origin if there's a *MISS* in **Edge Cache**. In this case, the origin is the bucket that was configured in the application.
 
 ![Overview of a request/response flow of MISS in Edge Cache](/assets/docs/images/uploads/data-transferred-miss-cache-image-processor.png)
 
