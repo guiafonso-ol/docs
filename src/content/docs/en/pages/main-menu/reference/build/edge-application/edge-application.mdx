@@ -142,7 +142,7 @@ There are several different scenarios in which data is transferred through Azion
 
 When an edge application delivers content created through an edge function on Azion, the request flow is processed fully through Azion servers and delivered directly to users.
 
-![Overview of a request/response flow using Edge Functions](/assets/docs/images/uploads/data-transferred-edge-functions)
+![Overview of a request/response flow using Edge Functions](/assets/docs/images/uploads/data-transferred-edge-functions.png)
 
 - Content offloaded through cache
 
@@ -150,7 +150,7 @@ When content is found in Azion's cache, meaning there was a *HIT* in **Edge Cach
 
 Content hosted through **Object Storage** can also be stored in cache and be delivered directly by the edge.
 
-![Overview of a request/response flow of HIT in Edge Cache](/assets/docs/images/uploads/data-transferred-hit-cache)
+![Overview of a request/response flow of HIT in Edge Cache](/assets/docs/images/uploads/data-transferred-hit-cache.png)
 
 - Content feteched from an origin
 
@@ -158,7 +158,7 @@ When content isn't found in Azion's cache, meaning there was a *MISS* in **Edge 
 
 For clients using **Object Storage**, Azion can also search and fetch the content from the origin if there's a *MISS* in **Edge Cache**. In this case, the origin is the object storage that was configured in the product.
 
-![Overview of a request/response flow of MISS in Edge Cache](/assets/docs/images/uploads/data-transferred-miss-cache-image-processor)
+![Overview of a request/response flow of MISS in Edge Cache](/assets/docs/images/uploads/data-transferred-miss-cache-image-processor.png)
 
 - Content using Image Processor fetched from an origin
 
