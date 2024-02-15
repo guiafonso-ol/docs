@@ -138,13 +138,13 @@ Total volume of data transferred by **Azion Edge Computing Platform**, whether i
 
 There are several different scenarios in which data is transferred through Azion. For example:
 
-- Content delivered using an edge functions
+#### Content delivered using an edge function
 
 When an edge application delivers content created through an edge function on Azion, the request flow is processed fully through Azion servers and delivered directly to users.
 
 ![Overview of a request/response flow using Edge Functions](/assets/docs/images/uploads/data-transferred-edge-functions.png)
 
-- Content offloaded through cache
+#### Content offloaded through cache
 
 When content is found in Azion's cache, meaning there was a *HIT* in **Edge Cache**, it's delivered directly by the edge, without searching for the content on the origin. For clients using **Tiered Cache**, if there's a *MISS* in the Edge Cache layer but a *HIT* in the Tiered Cache layer, the content is still delivered directly by the edge.
 
@@ -152,7 +152,7 @@ Content hosted through **Object Storage** can also be stored in cache and be del
 
 ![Overview of a request/response flow of HIT in Edge Cache](/assets/docs/images/uploads/data-transferred-hit-cache.png)
 
-- Content feteched from an origin
+#### Content feteched from an origin
 
 When content isn't found in Azion's cache, meaning there was a *MISS* in **Edge Cache**, Azion searches and fetches the content from the origin to deliver it to the user. For clients using **Tiered Cache**, there can be a *MISS* in both the Edge Cache and the Tiered Cache layer, and the content is searched on the origin before being delivered by the edge.
 
@@ -160,7 +160,7 @@ For clients using **Edge Storage**, Azion can also search and fetch the content 
 
 ![Overview of a request/response flow of MISS in Edge Cache](/assets/docs/images/uploads/data-transferred-miss-cache-image-processor.png)
 
-- Content using Image Processor fetched from an origin
+#### Content using Image Processor fetched from an origin
 
 Similar to the **Content offloaded through cache** and **Content fetched from an origin** flows, when the **Image Processor** module is enabled, images can be searched on **Edge Cache** and **Tiered Cached**, if enabled, and in case of a miss, the image is fetched from the origin and delivered by the edge, and cached for future requests.
 
