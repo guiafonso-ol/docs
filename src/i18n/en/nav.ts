@@ -206,7 +206,7 @@ export default [
 	{
 		text: 'Pricing', header: true, anchor: true, type: 'learn', slug: '/documentation/products/pricing/', key: 'pricing'
 	},
-	
+	{
 		text: 'Compliance', header: true, type: 'learn', key: 'compliance', children: [
 			{ text: 'SOC', header: true, anchor: true, type: 'learn', slug: '/documentation/compliance/soc/', key: 'compliance/soc' },
 			{ text: 'PCI DSS', header: true, anchor: true, type: 'learn', slug: '/documentation/compliance/pci-dss-certification/', key: 'compliance/pci-dss' },
