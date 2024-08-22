@@ -16,7 +16,7 @@ import { getPageBreadcrumb } from '~/util/getBreadcrumb';
 
 
 export interface Props {
-	content: { title: string };
+	content: { title: string, namespace: string };
 	fileToGetContributors: string;
 	previous?: { text: string; link: string };
 	next?: { text: string; link: string };
@@ -56,7 +56,7 @@ const t = useTranslations(Astro);
 						<Breadcrumb data={breadcrumbs} />
 					</div>
 					
-					<h1 id="overview" set:html={title} />
+					{content.namespace !="documentation_home" &&  <h1 id="overview" set:html={title} />}
 				</header>
 				
 				{

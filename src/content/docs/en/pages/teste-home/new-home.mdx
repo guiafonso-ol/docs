@@ -1,42 +1,26 @@
 ---
-// @ts-nocheck
-import type { MarkdownHeading } from 'astro';
+title: "Welcome to Azion Docs"
+description: >-
+  Explore the compatibility and integration of Node.js APIs and polyfills with
+  the Azion Edge Runtime, enhancing JavaScript execution in edge environments.
+permalink: /documentation/home/2
+meta_tags: >-
+  Azion Edge, Node.js compatibility, JavaScript runtime, Node APIs, polyfills,
+  Node.js polyfills, runtime APIs, Edge Runtime, edge computing
+namespace: documentation_home
+---
 
-import MainLayout from './MainLayout.astro';
-
-import type { HomepageEntry } from '~/content/config';
-import CardsList from '~/components/HomePages/Cardlist.astro';
-import ReadableContent from 'azion-webkit/readablecontent';
-
-export interface Props {
-	content: HomepageEntry['data'];
-	headings: MarkdownHeading[];
-	id: String;
-}
-
-const { content } = Astro.props;
 import HeroBlockBase from "azion-webkit/herobase";
 import LinkButton from 'azion-webkit/linkbutton'
 import ContentSection from 'azion-webkit/contentsection';
 import CardBase from 'azion-webkit/cardbaseclickable';
----
 
-<MainLayout {...Astro.props}>
-	{content.namespace !="documentation_home" ? (
- <ReadableContent>
-		<p>
-			{content.description }
-		</p> 
-	 </ReadableContent> 
-	 	<CardsList data={content.product_cards} />
-	):(
-	
 <HeroBlockBase
     title="Welcome to Azion Docs"
     description="Azion is the full-stack edge computing platform that simplifies how you build,  secure, and scale modern applications."
     display="flex"
     align="center"
-    isCentralized=true
+    isCentralized="true"
 >
     <Fragment slot="actions">
         <LinkButton link="https://www.azion.com/en/documentation/products/get-started/" label="Get started" severity="primary" target="_blank" />
@@ -47,8 +31,8 @@ import CardBase from 'azion-webkit/cardbaseclickable';
     title="Build applications faster"
     description="Build using your favorite framework and deploy an edge application in just a few steps."
     position="left"
-    grid=true
-    isCentralized=true
+    grid="true"
+    isCentralized="true"
 >
 <Fragment slot="actions">
         <CardBase>
@@ -90,13 +74,9 @@ import CardBase from 'azion-webkit/cardbaseclickable';
 <ContentSection
     title="Find the solution that fits you better"
     position="left"
-    grid=true
-    isCentralized=true
+    grid="true"
+    isCentralized="true"
     description = "Discover tailored solutions for your specific use cases and business needs."
-    title = "Section 4"
-position = "left"
-grid = "true"
-isCentralized = "true"
 >
 
     <Fragment slot="actions">
@@ -139,8 +119,8 @@ isCentralized = "true"
 <ContentSection
     title="Pick your development interface"
     position="left"
-    grid=true
-    isCentralized=true
+    grid="true"
+    isCentralized="true"
     description = "Choose the interface that best suits your workflow, from intuitive GUIs to powerful APIs."
 >
 
@@ -179,8 +159,8 @@ isCentralized = "true"
 <ContentSection
     title="Choose your journey"
     position="left"
-    grid=true
-    isCentralized=true
+    grid="true"
+    isCentralized="true"
     description = "Explore resources designed to support you at every stage."
 >
 
@@ -226,13 +206,10 @@ isCentralized = "true"
     description="Stay updated and share your experiences with the Azion community."
     display="flex"
     align="center"
-    isCentralized=true
+    isCentralized="true"
 >
     <Fragment slot="actions">
         <LinkButton link="https://www.azion.com/en/documentation/products/release-notes/" label="Go to Release Notes" severity="primary" target="_blank" />
-        <LinkButton link="" label="Join the Community" severity="secondary" target="_blank" />
+        <LinkButton link="/en/documentation/products/devtools/azion-edge-runtime/frameworks-compatibility/" label="Join the Community" severity="secondary" target="_blank" />
     </Fragment>
 </HeroBlockBase>
-)}
-
-</MainLayout>
