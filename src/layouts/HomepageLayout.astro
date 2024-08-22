@@ -19,6 +19,7 @@ import HeroBlockBase from "azion-webkit/herobase";
 import LinkButton from 'azion-webkit/linkbutton'
 import ContentSection from 'azion-webkit/contentsection';
 import CardBase from 'azion-webkit/cardbaseclickable';
+
 ---
 
 <MainLayout {...Astro.props}>
@@ -49,34 +50,40 @@ import CardBase from 'azion-webkit/cardbaseclickable';
     position="left"
     grid=true
     isCentralized=true
+    
 >
 <Fragment slot="actions">
-        <CardBase link = "https://console.azion.com/create/nextjs/next-static-boilerplate">
-            <Fragment slot="actions">
+        <CardBase
+          grid = true link = "https://console.azion.com/create/nextjs/next-static-boilerplate">
+            <Fragment slot="content">
                 Next
             </Fragment>
         </CardBase>
 
-        <CardBase link = "https://console.azion.com/create/vue/vue-boilerplate">
-            <Fragment slot="actions">
+        <CardBase
+        grid = true link = "https://console.azion.com/create/vue/vue-boilerplate">
+            <Fragment slot="content">
                 Vue
             </Fragment>
         </CardBase>
 
-        <CardBase link = "https://console.azion.com/create/react/react-boilerplate">
-            <Fragment slot="actions">
+        <CardBase
+        grid = true link = "https://console.azion.com/create/react/react-boilerplate">
+            <Fragment slot="content">
                React
             </Fragment>
         </CardBase>
 
-        <CardBase link = "https://console.azion.com/create/angular/angular-boilerplate">
-            <Fragment slot="actions">
+        <CardBase
+        grid = true link = "https://console.azion.com/create/angular/angular-boilerplate">
+            <Fragment slot="content">
                 Angular
             </Fragment>
         </CardBase>
 
-        <CardBase link = "https://console.azion.com/create/astro/astro-boilerplate">
-            <Fragment slot="actions">
+        <CardBase
+        grid = true link = "https://console.azion.com/create/astro/astro-boilerplate">
+            <Fragment slot="content">
                 Astro
             </Fragment>
         </CardBase>
@@ -100,30 +107,34 @@ isCentralized = "true"
 
     <Fragment slot="actions">
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/architectures/edge-application/application-acceleration/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Accelerate Applications and APIs with Edge Computing
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/architecture/bot-management/protect-your-applications-with-bot-management/"
         >
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Protect Your Edge Applications with a Bot Management Solution
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/architecture/edge-firewall/web-application-and-api-protection-waap/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Enhance Cybersecurity with Azion's Advanced WAAP Solution
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/architectures/edge-application/serverless-applications/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Implement Serverless Architecture with Azion
             </Fragment>
         </CardBase>
@@ -145,30 +156,34 @@ isCentralized = "true"
 
     <Fragment slot="actions">
         <CardBase
+        grid = true
         link = "https://console.azion.com/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Azion Console
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/azion-cli/overview/"
         >
-            <Fragment slot="actions">
+            <Fragment slot="content">
              Azion CLI
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://api.azion.com/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Azion API
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/terraform-provider/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
              Azion Terraform Provider
             </Fragment>
         </CardBase>
@@ -185,41 +200,47 @@ isCentralized = "true"
 
     <Fragment slot="actions">
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/guides/build/overview/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Build
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/store/overview/"
         >
-            <Fragment slot="actions">
+            <Fragment slot="content">
              Store
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/secure/overview/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
               Secure
             </Fragment>
         </CardBase>
 
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/deploy/overview/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
              Deploy
             </Fragment>
         </CardBase>
         <CardBase
+        grid = true
         link = "https://www.azion.com/en/documentation/products/observe/overview/">
-            <Fragment slot="actions">
+            <Fragment slot="content">
              Observe
             </Fragment>
         </CardBase>
     </Fragment>
 </ContentSection>
+<br><br>
 <HeroBlockBase
     title="What's new?"
     description="Stay updated and share your experiences with the Azion community."
@@ -235,3 +256,4 @@ isCentralized = "true"
 )}
 
 </MainLayout>
+
